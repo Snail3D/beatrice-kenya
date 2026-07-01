@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mama Beatrice's Window — Western Kenya</title>
+<meta name="description" content="A window restaurant beside the college and the hospital. Good food, warm heart, Western Kenya.">
+<style>
+  :root {
+    --earth: #6B3410;
+    --earth-deep: #4A2208;
+    --clay: #C97B3C;
+    --clay-light: #E8A86A;
+    --savanna: #D4A82C;
+    --leaf: #4A6B2A;
+    --leaf-light: #7A9545;
+    --sun: #E8B834;
+    --ink: #2A1810;
+    --paper: #FAF3E3;
+    --paper-warm: #F2E5C7;
+    --cream: #FFF8E7;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.7;
+    font-size: 18px;
+  }
+  h1, h2, h3 {
+    font-family: 'Palatino', 'Georgia', serif;
+    color: var(--earth-deep);
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+  }
+  h1 { font-size: 2.6rem; }
+  h2 { font-size: 2rem; margin-bottom: 0.5rem; }
+  h3 { font-size: 1.3rem; margin-bottom: 0.4rem; }
+
+  /* HERO */
+  .hero {
+    background: var(--earth-deep);
+    color: var(--cream);
+    padding: 5rem 1.5rem 4rem;
+    text-align: center;
+    border-bottom: 6px solid var(--clay);
+  }
+  .hero-eyebrow {
+    color: var(--clay-light);
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    font-size: 0.85rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  .hero h1 {
+    color: var(--cream);
+    font-size: 3.2rem;
+    margin-bottom: 0.5rem;
+    font-style: italic;
+  }
+  .hero-luo {
+    font-size: 1.6rem;
+    color: var(--clay-light);
+    margin-bottom: 1.5rem;
+    font-style: italic;
+  }
+  .hero-tag {
+    font-size: 1.15rem;
+    color: var(--paper-warm);
+    max-width: 640px;
+    margin: 0 auto;
+  }
+  .hero-strip {
+    margin-top: 2.5rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    color: var(--clay-light);
+    font-size: 0.95rem;
+  }
+  .hero-strip span {
+    border-right: 1px solid var(--clay);
+    padding-right: 1.5rem;
+  }
+  .hero-strip span:last-child { border-right: none; padding-right: 0; }
+
+  /* SECTION */
+  section {
+    padding: 4rem 1.5rem;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  section.tinted {
+    background: var(--paper-warm);
+    max-width: none;
+    padding: 4rem 1.5rem;
+  }
+  section.tinted > * { max-width: 960px; margin-left: auto; margin-right: auto; }
+
+  /* INTRO */
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    align-items: start;
+    margin-top: 1.5rem;
+  }
+  .intro-grid p { margin-bottom: 1rem; }
+  .intro-grid .luo {
+    color: var(--leaf);
+    font-style: italic;
+    border-left: 3px solid var(--leaf-light);
+    padding-left: 1rem;
+    margin: 1rem 0;
+  }
+  @media (max-width: 700px) {
+    .intro-grid { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 2.2rem; }
+    .hero-luo { font-size: 1.2rem; }
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.5rem; }
+  }
+
+  /* MENU */
+  .menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+    margin-top: 2rem;
+  }
+  .dish {
+    background: var(--cream);
+    border: 1px solid var(--clay-light);
+    border-left: 5px solid var(--clay);
+    padding: 1.25rem;
+    border-radius: 4px;
+  }
+  .dish .name {
+    font-weight: bold;
+    color: var(--earth);
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+  }
+  .dish .luo-name {
+    font-style: italic;
+    color: var(--leaf);
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+  }
+  .dish .why {
+    color: var(--ink);
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+  }
+  .dish .price {
+    color: var(--earth-deep);
+    font-weight: bold;
+    font-size: 0.95rem;
+  }
+
+  /* PHASES */
+  .phases {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  .phase {
+    background: var(--cream);
+    padding: 1.5rem;
+    border-top: 4px solid var(--leaf);
+  }
+  .phase h3 {
+    color: var(--leaf);
+    margin-bottom: 0.25rem;
+  }
+  .phase .weeks {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--clay);
+    margin-bottom: 1rem;
+  }
+  .phase ul {
+    list-style: none;
+    padding: 0;
+  }
+  .phase li {
+    padding: 0.4rem 0 0.4rem 1.5rem;
+    position: relative;
+    border-bottom: 1px dotted var(--clay-light);
+  }
+  .phase li:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.85rem;
+    width: 8px;
+    height: 8px;
+    background: var(--clay);
+    border-radius: 50%;
+  }
+  .phase li:last-child { border-bottom: none; }
+
+  /* SCRIPTURE */
+  .scripture {
+    background: var(--earth);
+    color: var(--cream);
+    padding: 3rem 2rem;
+    margin: 3rem 0;
+    text-align: center;
+    border-radius: 6px;
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .scripture blockquote {
+    font-style: italic;
+    font-size: 1.25rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  .scripture .ref {
+    color: var(--clay-light);
+    font-size: 0.95rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .scripture .luo-trans {
+    color: var(--paper-warm);
+    font-size: 1rem;
+    margin-top: 1rem;
+    font-style: italic;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--earth-deep);
+    color: var(--paper-warm);
+    padding: 3rem 1.5rem;
+    text-align: center;
+  }
+  footer .name {
+    font-size: 1.5rem;
+    color: var(--clay-light);
+    margin-bottom: 0.5rem;
+    font-style: italic;
+  }
+  footer .luo {
+    font-style: italic;
+    color: var(--paper-warm);
+    margin-bottom: 1.5rem;
+  }
+  footer .contact {
+    color: var(--clay-light);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  footer .tag {
+    margin-top: 2rem;
+    font-size: 0.85rem;
+    color: var(--clay);
+    letter-spacing: 0.1em;
+  }
+
+  /* DIVIDER */
+  .divider {
+    text-align: center;
+    margin: 2.5rem 0;
+    color: var(--clay);
+    font-size: 1.5rem;
+    letter-spacing: 0.5em;
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-eyebrow">Western Kenya &middot; Near the College &amp; the Hospital</div>
+  <h1>Mama Beatrice's Window</h1>
+  <div class="hero-luo">Mama Beatrice's Od Madhiambo</div>
+  <p class="hero-tag">
+    A small house with a window that opens to the road. Good food, cooked daily,
+    served with a warm heart to students, to nurses, to neighbors, to anyone who is hungry and tired.
+  </p>
+  <div class="hero-strip">
+    <span>Open daily</span>
+    <span>M-Pesa accepted</span>
+    <span>Ugali &middot; Chapati &middot; Chai</span>
+  </div>
+</header>
+
+<!-- INTRO -->
+<section>
+  <h2>Yot kamano nonro ma iwinjo</h2>
+  <p style="font-style: italic; color: var(--leaf); margin-top: -0.5rem; margin-bottom: 1.5rem;">
+    A few words for you to hear first
+  </p>
+  <div class="intro-grid">
+    <div>
+      <p>
+        Beatrice is opening a window restaurant from her little house in Western Kenya.
+        It is not a fancy place. It is a window, a counter, a stove, a kettle, and a mother
+        who knows how to feed people.
+      </p>
+      <p>
+        Two big crowds walk past her gate every single day:
+        the <strong>college students</strong> who need a hot plate before class,
+        and the <strong>hospital workers</strong> who need a fast meal on a long shift.
+        They will come back when the food is good and the price is fair. That is the whole business.
+      </p>
+    </div>
+    <div>
+      <p class="luo">
+        "Chakula maber, pile maber, thuolo maber. Ka iyie winjo, iyawo biro."<br>
+        <span style="font-size: 0.9rem;">
+          Good food, good welcome, good measure. When you hear about it, they will come.
+        </span>
+      </p>
+      <p>
+        The plan is simple: cook five or six things very well. Set up an M-Pesa till.
+        Open WhatsApp. Hand out a few free plates to the nurses. Tell the students to spread the word.
+        Within one month, the window will be known.
+      </p>
+    </div>
+  </div>
+</section>
+
+<div class="divider">&middot;&middot;&middot;</div>
+
+<section class="tinted">
+  <h2>The Menu</h2>
+  <p style="font-style: italic; color: var(--leaf); margin-top: -0.25rem; margin-bottom: 0.5rem;">
+    Nyagli ma itimo i kare mar inyalo gombo
+  </p>
+  <p style="margin-bottom: 1rem;">
+    Cook <strong>five to seven dishes every day, not twenty dishes poorly</strong>.
+    This is the rule. Below are the ones that always sell in Western Kenya.
+  </p>
+  <div class="menu">
+    <div class="dish">
+      <div class="name">Ugali &amp; Fresh Fish</div>
+      <div class="luo-name">Kuon &amp; rech</div>
+      <div class="why">Lake Victoria is close. Tilapia or Nile perch, fried the morning it is caught.</div>
+      <div class="price">150 &ndash; 300 KSh</div>
+    </div>
+    <div class="dish">
+      <div class="name">Ugali &amp; Local Chicken</div>
+      <div class="luo-name">Kuon &amp; ingokho</div>
+      <div class="why">The weekend plate. Slower to cook, higher price, worth every shilling.</div>
+      <div class="price">200 &ndash; 350 KSh</div>
+    </div>
+    <div class="dish">
+      <div class="name">Ugali &amp; Sukuma / Managu</div>
+      <div class="luo-name">Kuon &amp; mrenda</div>
+      <div class="why">The everyday plate. Cheap, filling, what every grandmother knows how to cook.</div>
+      <div class="price">80 &ndash; 120 KSh</div>
+    </div>
+    <div class="dish">
+      <div class="name">Githeri / Nduma / Ndengu</div>
+      <div class="luo-name">Ndengu / nduma</div>
+      <div class="why">Student favorite. Maize and beans, or arrow root, or green grams. Fills the belly for hours.</div>
+      <div class="price">80 &ndash; 100 KSh</div>
+    </div>
+    <div class="dish">
+      <div class="name">Chapati &amp; Beans</div>
+      <div class="luo-name">Chapati &amp; ndengu</div>
+      <div class="why">Lunch to go. Travels well. The hospital staff pick this up on their way in.</div>
+      <div class="price">70 &ndash; 100 KSh</div>
+    </div>
+    <div class="dish">
+      <div class="name">Mandazi &amp; Chai</div>
+      <div class="luo-name">Mandazi &amp; chai</div>
+      <div class="why">The breakfast crowd. Students before class, guards before morning shift.</div>
+      <div class="price">50 &ndash; 80 KSh</div>
+    </div>
+    <div class="dish">
+      <div class="name">Rice &amp; Beef Stew</div>
+      <div class="luo-name">Mchele &amp; nyama</div>
+      <div class="why">The "special plate" for hospital staff who want something different from ugali.</div>
+      <div class="price">150 &ndash; 200 KSh</div>
+    </div>
+  </div>
+</section>
+
+<!-- SCRIPTURE 1 -->
+<div class="scripture">
+  <blockquote>
+    "She opens her mouth with wisdom, and on her tongue is the law of kindness.
+    She looks well to the ways of her household, and does not eat the bread of idleness.
+    Her children rise up and call her blessed; her husband also, and he praises her."
+  </blockquote>
+  <div class="ref">Proverbs 31: 26-28</div>
+  <div class="luo-trans">
+    "Dhoge magi yweyo gi yueyo, ka loch mage en timbe mar hera. Oseso ng'iyo yo mar odhoge,
+    to ok owuoyi chieng' mar oloyo. Kot ema nyingone gi 'yoo ma omiyo i'.' "
+  </div>
+</div>
+
+<!-- PHASES -->
+<section>
+  <h2>The Plan in Four Steps</h2>
+  <p style="font-style: italic; color: var(--leaf); margin-top: -0.25rem;">
+    Yo ariyo magi ka winjogo
+  </p>
+  <div class="phases">
+    <div class="phase">
+      <h3>1. Foundation</h3>
+      <div class="weeks">Week 1 &mdash; 2</div>
+      <ul>
+        <li>Pick the name &amp; paint a signboard</li>
+        <li>Set up M-Pesa Till (free for customers)</li>
+        <li>Print a small price card by the window</li>
+        <li>Test three recipes with neighbors</li>
+      </ul>
+    </div>
+    <div class="phase">
+      <h3>2. Launch</h3>
+      <div class="weeks">Week 3 &mdash; 4</div>
+      <ul>
+        <li>Open WhatsApp Business with menu</li>
+        <li>Post food photos every morning on Status</li>
+        <li>Free plate to five nurses on day one</li>
+        <li>Student ambassador: two plates for two shares</li>
+      </ul>
+    </div>
+    <div class="phase">
+      <h3>3. Steady Crowd</h3>
+      <div class="weeks">Month 2 &mdash; 3</div>
+      <ul>
+        <li>Same six dishes, same hours, every day</li>
+        <li>Delivery to the hospital gate for night shift</li>
+        <li>Sunday plate: rice &amp; chicken for families</li>
+        <li>Track every sale in a small book</li>
+      </ul>
+    </div>
+    <div class="phase">
+      <h3>4. Grow</h3>
+      <div class="weeks">Month 4 onward</div>
+      <ul>
+        <li>Add a second helper when the queue is long</li>
+        <li>Birthday plates for hospital staff</li>
+        <li>Chapati in bulk for road travelers</li>
+        <li>Save half of every extra shilling</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- SCRIPTURE 2 -->
+<div class="scripture">
+  <blockquote>
+    "And whatever you do, in word or deed, do everything in the name of the Lord Jesus,
+    giving thanks to God the Father through him. Whatever you do, work heartily,
+    as for the Lord and not for men."
+  </blockquote>
+  <div class="ref">Colossians 3: 17, 23</div>
+  <div class="luo-trans">
+    "Gik ma uchweyo, ka wach kata ka tich, tim ma nying Yesu, wuoyoe Wuoyic. Gik ma uchweyo,
+    timuru gi pachi, kaka utimo ne Wuoyic, ok ne ji."
+  </div>
+</div>
+
+<!-- PAYMENT -->
+<section style="padding-bottom: 5rem;">
+  <h2>How to Pay</h2>
+  <p style="font-style: italic; color: var(--leaf); margin-top: -0.25rem;">
+    Yot unyalo chulo
+  </p>
+  <div style="background: var(--cream); padding: 2rem; border-left: 5px solid var(--leaf); margin-top: 1.5rem;">
+    <p style="font-size: 1.1rem; margin-bottom: 1rem;">
+      <strong>M-Pesa Till Number:</strong> to be printed on the window once set up<br>
+      <strong>Cash:</strong> always welcome, always have small change ready<br>
+      <strong>WhatsApp Order:</strong> send a message, pay on pickup, walk away happy
+    </p>
+    <p style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--clay-light);">
+      <em>Tip:</em> the till number is for customers, not for you. It is their number to send to,
+      not for you to receive. That small detail is what makes the difference between
+      a professional and a hobby.
+    </p>
+  </div>
+</section>
+
+<!-- CLOSING SCRIPTURE -->
+<div class="scripture">
+  <blockquote>
+    "Two are better than one, because they have a good reward for their toil.
+    For if they fall, one will lift up his fellow. But woe to him who is alone when he falls
+    and has not another to lift him up."
+  </blockquote>
+  <div class="ref">Ecclesiastes 4: 9-10</div>
+  <div class="luo-trans">
+    "Jo ariyo ber moloyo achiel, nikech gik ma itimogo ni ikwayo. Ka ageng'o oduogore,
+    achiel nyalo ng'iyogo jowegi. To ng'ama nen gi yueyo kende ka oduogore, to onge ng'ama oseyo."
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="name">Mama Beatrice's Window</div>
+  <div class="luo">Mama Beatrice's Od Madhiambo &middot; Western Kenya</div>
+  <div class="contact">
+    Near the college &middot; Near the hospital<br>
+    Open daily from sunrise until the last plate is gone
+  </div>
+  <div class="tag">A BLESSING TO THE NEIGHBORS</div>
+</footer>
+
+</body>
+</html>
