@@ -123,6 +123,21 @@
     .hero-luo { font-size: 1.2rem; }
     h1 { font-size: 2rem; }
     h2 { font-size: 1.5rem; }
+    .formula-eq { font-size: 0.85rem; white-space: pre-wrap; }
+    .price-table { font-size: 0.85rem; }
+    .price-table th, .price-table td { padding: 0.5rem 0.3rem; }
+    .hero { padding: 3rem 1rem 2.5rem; }
+    .hero h1 { font-size: 1.9rem; }
+    section { padding: 2.5rem 1rem; }
+    section.tinted { padding: 2.5rem 1rem; }
+    .scripture { padding: 2rem 1.25rem; margin: 2rem 0; }
+    .scripture blockquote { font-size: 1.1rem; }
+    .formula-card { padding: 1.25rem 1rem; }
+    .calc { padding: 1rem; }
+    .calc-result { font-size: 1rem; }
+    .calc-row { flex-direction: column; align-items: stretch; gap: 0.4rem; }
+    .calc-row label { flex: 0 0 auto; width: 100%; }
+    .calc-row input[type="number"] { flex: 0 0 auto; width: 100%; max-width: 100%; text-align: left; font-size: 1.05rem; padding: 0.8rem; }
   }
 
   /* BILINGUAL PAIR */
@@ -417,25 +432,61 @@
   }
   .calc-row label {
     flex: 1 1 200px;
+    min-width: 0;
     color: var(--earth-deep);
     font-size: 0.95rem;
+    line-height: 1.4;
+  }
+  .calc-row label small {
+    display: block;
+    color: var(--ink);
+    font-size: 0.85rem;
+    font-weight: normal;
+    margin-top: 0.15rem;
+  }
+  .calc-row label span[lang="luo"] {
+    display: block;
   }
   .calc-row input[type="number"] {
-    flex: 0 0 140px;
-    padding: 0.6rem 0.75rem;
+    flex: 1 1 140px;
+    width: 100%;
+    max-width: 220px;
+    padding: 0.7rem 0.85rem;
     border: 1px solid var(--clay);
     border-radius: 4px;
     background: var(--cream);
-    font-size: 1rem;
+    font-size: 1.05rem;
     font-family: 'Courier New', monospace;
     color: var(--earth-deep);
     text-align: right;
     min-width: 0;
+    -webkit-appearance: none;
+    appearance: none;
+    box-sizing: border-box;
   }
   .calc-row input:focus {
     outline: none;
     border-color: var(--leaf);
     background: #fff;
+  }
+  /* Mobile: stack label above input, full-width input */
+  @media (max-width: 600px) {
+    .calc-row {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0.4rem;
+    }
+    .calc-row label {
+      flex: 0 0 auto;
+      width: 100%;
+      margin-bottom: 0.1rem;
+    }
+    .calc-row input[type="number"] {
+      flex: 0 0 auto;
+      width: 100%;
+      max-width: 100%;
+      text-align: left;
+    }
   }
   .calc-result {
     background: var(--earth);
@@ -795,7 +846,7 @@
           <span lang="luo">Nengo mar gik ma itimo ne nyagli achiel</span><br>
           <small>Cost of ingredients for one plate (KSh)</small>
         </label>
-        <input type="number" id="pf-cost" min="1" step="1" placeholder="e.g. 80" inputmode="numeric">
+        <input type="number" id="pf-cost" min="1" step="1" placeholder="80" inputmode="numeric">
       </div>
       <div class="calc-result empty" id="pf-result">
     </div>
@@ -815,14 +866,14 @@
           <span lang="luo">Pesa ma ipenjo loso dwe achiel</span><br>
           <small>Monthly savings goal (KSh)</small>
         </label>
-        <input type="number" id="ds-goal" min="1" step="100" placeholder="e.g. 3000" inputmode="numeric">
+        <input type="number" id="ds-goal" min="1" step="100" placeholder="3000" inputmode="numeric">
       </div>
       <div class="calc-row">
         <label for="ds-profit">
           <span lang="luo">Chuwo ma oyudo kuom nyagli achiel</span><br>
           <small>Your profit per plate (KSh)</small>
         </label>
-        <input type="number" id="ds-profit" min="1" step="10" placeholder="e.g. 100" inputmode="numeric">
+        <input type="number" id="ds-profit" min="1" step="10" placeholder="100" inputmode="numeric">
       </div>
       <div class="calc-result empty" id="ds-result">
     </div>
@@ -842,21 +893,21 @@
           <span lang="luo">Gik ma in-go eria sani</span><br>
           <small>How much you have right now (kg)</small>
         </label>
-        <input type="number" id="rs-have" min="0" step="0.5" placeholder="e.g. 5" inputmode="decimal">
+        <input type="number" id="rs-have" min="0" step="0.5" placeholder="5" inputmode="decimal">
       </div>
       <div class="calc-row">
         <label for="rs-use">
           <span lang="luo">Gik ma itiyo kuom dwe achiel</span><br>
           <small>How much you use per day (kg)</small>
         </label>
-        <input type="number" id="rs-use" min="0.1" step="0.1" placeholder="e.g. 2" inputmode="decimal">
+        <input type="number" id="rs-use" min="0.1" step="0.1" placeholder="2" inputmode="decimal">
       </div>
       <div class="calc-row">
         <label for="rs-market">
           <span lang="luo">Nengo ma iyudo kuom soko (dwe)</span><br>
           <small>Days until next market day</small>
         </label>
-        <input type="number" id="rs-market" min="0" step="1" placeholder="e.g. 2" inputmode="numeric">
+        <input type="number" id="rs-market" min="0" step="1" placeholder="2" inputmode="numeric">
       </div>
       <div class="calc-result empty" id="rs-result">
     </div>
@@ -876,7 +927,7 @@
           <span lang="luo">Pesa ma iyudo nono dwe</span><br>
           <small>Total you took in today (KSh)</small>
         </label>
-        <input type="number" id="ts-total" min="1" step="100" placeholder="e.g. 2400" inputmode="numeric">
+        <input type="number" id="ts-total" min="1" step="100" placeholder="2400" inputmode="numeric">
       </div>
       <div class="calc-result empty" id="ts-result">
     </div>
@@ -896,7 +947,7 @@
           <span lang="luo">Namba mar chiemo ma inyalo timo dwe</span><br>
           <small>Plates you can realistically cook today</small>
         </label>
-        <input type="number" id="pm-capacity" min="1" step="5" placeholder="e.g. 30" inputmode="numeric">
+        <input type="number" id="pm-capacity" min="1" step="5" placeholder="30" inputmode="numeric">
       </div>
       <div class="calc-result empty" id="pm-result">
     </div>
