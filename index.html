@@ -446,10 +446,13 @@
     font-size: 1.05rem;
     line-height: 1.6;
   }
+  .calc-result.empty { background: var(--paper-warm); color: var(--ink); border: 1px dashed var(--clay); }
+  .calc-result.empty strong { color: var(--earth); }
   .calc-result.good { border-left: 5px solid var(--leaf-light); }
   .calc-result.warn { border-left: 5px solid var(--sun); }
   .calc-result.bad  { border-left: 5px solid var(--clay); }
   .calc-result strong { color: var(--clay-light); font-size: 1.15rem; }
+  .calc-result:not(.empty) strong { color: var(--clay-light); }
   .calc-verdict {
     margin-top: 0.5rem;
     font-style: italic;
@@ -794,9 +797,7 @@
         </label>
         <input type="number" id="pf-cost" min="1" step="1" placeholder="e.g. 80" inputmode="numeric">
       </div>
-      <div class="calc-result good" id="pf-result" data-default="Ket nengo mar gik ma itimo | Enter your ingredient cost above">
-        <span lang="luo">Ket nengo mar gik ma itimo | Enter your ingredient cost above</span>
-      </div>
+      <div class="calc-result empty" id="pf-result">
     </div>
   </div>
 
@@ -823,9 +824,7 @@
         </label>
         <input type="number" id="ds-profit" min="1" step="10" placeholder="e.g. 100" inputmode="numeric">
       </div>
-      <div class="calc-result good" id="ds-result" data-default="Ket namba ariyo | Enter both numbers above">
-        <span lang="luo">Ket namba ariyo | Enter both numbers above</span>
-      </div>
+      <div class="calc-result empty" id="ds-result">
     </div>
   </div>
 
@@ -859,9 +858,7 @@
         </label>
         <input type="number" id="rs-market" min="0" step="1" placeholder="e.g. 2" inputmode="numeric">
       </div>
-      <div class="calc-result good" id="rs-result" data-default="Ket namba adek | Enter the three numbers above">
-        <span lang="luo">Ket namba adek | Enter the three numbers above</span>
-      </div>
+      <div class="calc-result empty" id="rs-result">
     </div>
   </div>
 
@@ -881,9 +878,7 @@
         </label>
         <input type="number" id="ts-total" min="1" step="100" placeholder="e.g. 2400" inputmode="numeric">
       </div>
-      <div class="calc-result good" id="ts-result" data-default="Ket namba achiel | Enter the total above">
-        <span lang="luo">Ket namba achiel | Enter the total above</span>
-      </div>
+      <div class="calc-result empty" id="ts-result">
     </div>
   </div>
 
@@ -903,9 +898,7 @@
         </label>
         <input type="number" id="pm-capacity" min="1" step="5" placeholder="e.g. 30" inputmode="numeric">
       </div>
-      <div class="calc-result good" id="pm-result" data-default="Ket namba achiel | Enter your capacity above">
-        <span lang="luo">Ket namba achiel | Enter your capacity above</span>
-      </div>
+      <div class="calc-result empty" id="pm-result">
     </div>
   </div>
 
@@ -967,6 +960,18 @@
     el.className = 'calc-result ' + klass;
     el.innerHTML = html;
   }
+  function setEmpty(id, luoText) {
+    var el = document.getElementById(id);
+    el.className = 'calc-result empty';
+    el.innerHTML = '<span lang="luo">' + luoText + '</span>';
+  }
+
+  // Set initial empty states
+  setEmpty('pf-result', 'Ket nengo mar gik ma itimo | Enter your ingredient cost above');
+  setEmpty('ds-result', 'Ket namba ariyo | Enter both numbers above');
+  setEmpty('rs-result', 'Ket namba adek | Enter the three numbers above');
+  setEmpty('ts-result', 'Ket namba achiel | Enter the total above');
+  setEmpty('pm-result', 'Ket namba achiel | Enter your capacity above');
 
   // ===== 1. PLATE PRICE FINDER =====
   // Input: ingredients cost for one plate
@@ -976,7 +981,7 @@
   function priceFinder() {
     var cost = parseFloat(document.getElementById('pf-cost').value);
     if (isNaN(cost) || cost <= 0) {
-      setResult('pf-result', 'good', 'Ket nengo mar gik ma itimo | Enter your ingredient cost above');
+      setEmpty('pf-result', 'Ket nengo mar gik ma itimo | Enter your ingredient cost above');
       return;
     }
     var lo = cost * 2.8;   // 36% food cost (volume)
@@ -999,7 +1004,7 @@
     var goal = parseFloat(document.getElementById('ds-goal').value);
     var profit = parseFloat(document.getElementById('ds-profit').value);
     if (isNaN(goal) || goal <= 0 || isNaN(profit) || profit <= 0) {
-      setResult('ds-result', 'good', 'Ket namba ariyo | Enter both numbers above');
+      setEmpty('ds-result', 'Ket namba ariyo | Enter both numbers above');
       return;
     }
     var perDay = goal / 30;
@@ -1009,7 +1014,7 @@
     setResult('ds-result', 'good',
       '<strong>Sell about ' + plates + ' plates per day</strong><br>' +
       'That is roughly <strong>' + wkly + ' plates per week</strong>, <strong>' + monthly + ' per month</strong>.<br>' +
-      '<div class="calc-verdict">Below ' + Math.ceil(plates * 0.6) + ' plates/day you are not saving. Above ' + Math.ceil(plates * 1.5) + ' plates/day you are doing well.</div>'
+      '<div class="calc-verdict">Below ' + plates + ' plates/day you are not saving toward your goal. Above ' + Math.ceil(plates * 1.5) + ' plates/day you are doing well.</div>'
     );
   }
 
@@ -1021,20 +1026,24 @@
     var use = parseFloat(document.getElementById('rs-use').value);
     var market = parseFloat(document.getElementById('rs-market').value);
     if (isNaN(have) || isNaN(use) || isNaN(market) || use <= 0) {
-      setResult('rs-result', 'good', 'Ket namba adek | Enter the three numbers above');
+      setEmpty('rs-result', 'Ket namba adek | Enter the three numbers above');
       return;
     }
     var daysLeft = have / use;
+    var slack = daysLeft - market;  // positive = plenty of buffer; negative = will run out
     var klass, verdict;
-    if (daysLeft < market) {
+    if (slack < 0) {
       klass = 'bad';
-      verdict = '<strong>GO TO MARKET TODAY.</strong> You have ' + daysLeft.toFixed(1) + ' days of stock but the market is ' + market + ' days away.';
-    } else if (daysLeft < market + 1) {
+      verdict = '<strong>GO TO MARKET TODAY.</strong> You only have ' + daysLeft.toFixed(1) + ' days of stock but the market is ' + market + ' days away. You WILL run out before you can restock.';
+    } else if (slack < 1) {
       klass = 'warn';
-      verdict = '<strong>GO TOMORROW.</strong> You have ' + daysLeft.toFixed(1) + ' days of stock. Market is ' + market + ' days away. Tight, but possible.';
+      verdict = '<strong>GO TOMORROW.</strong> You have ' + daysLeft.toFixed(1) + ' days of stock. Market is in ' + market + ' days. Barely enough, no room for waste or surprise guests.';
+    } else if (slack < 2) {
+      klass = 'good';
+      verdict = '<strong>WAIT ONE MORE DAY.</strong> You have ' + daysLeft.toFixed(1) + ' days of stock. Market is in ' + market + ' days. Comfortable but not loose.';
     } else {
       klass = 'good';
-      verdict = '<strong>WAIT.</strong> You have ' + daysLeft.toFixed(1) + ' days of stock. Market is in ' + market + ' days. Plenty of time.';
+      verdict = '<strong>YOU HAVE PLENTY.</strong> ' + daysLeft.toFixed(1) + ' days of stock vs ' + market + ' days until market. No need to buy early.';
     }
     setResult('rs-result', klass,
       'Days of stock on hand: <strong>' + daysLeft.toFixed(1) + ' days</strong><br>' +
@@ -1049,7 +1058,7 @@
   function takeHome() {
     var total = parseFloat(document.getElementById('ts-total').value);
     if (isNaN(total) || total <= 0) {
-      setResult('ts-result', 'good', 'Ket namba achiel | Enter the total above');
+      setEmpty('ts-result', 'Ket namba achiel | Enter the total above');
       return;
     }
     var stock = total * 0.50;
@@ -1070,7 +1079,7 @@
   function plateMix() {
     var cap = parseFloat(document.getElementById('pm-capacity').value);
     if (isNaN(cap) || cap <= 0) {
-      setResult('pm-result', 'good', 'Ket namba achiel | Enter your capacity above');
+      setEmpty('pm-result', 'Ket namba achiel | Enter your capacity above');
       return;
     }
     var ugaliFish = Math.round(cap * 0.30);   // 30% ugali + fish (signature, margin)
