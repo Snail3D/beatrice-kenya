@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="luo">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -125,6 +125,21 @@
     h2 { font-size: 1.5rem; }
   }
 
+  /* BILINGUAL PAIR */
+  .bilingual { margin: 0 0 1rem 0; }
+  .bilingual .luo-text {
+    color: var(--earth-deep);
+    font-weight: 500;
+  }
+  .bilingual .en-text {
+    display: block;
+    margin-top: 0.25rem;
+    font-size: 0.92rem;
+    color: var(--leaf);
+    font-style: italic;
+    line-height: 1.5;
+  }
+
   /* MENU */
   .menu {
     display: grid;
@@ -155,6 +170,13 @@
     color: var(--ink);
     font-size: 0.95rem;
     margin-bottom: 0.5rem;
+  }
+  .dish .why-en {
+    display: block;
+    margin-top: 0.2rem;
+    font-size: 0.88rem;
+    color: var(--leaf);
+    font-style: italic;
   }
   .dish .price {
     color: var(--earth-deep);
@@ -193,6 +215,14 @@
     padding: 0.4rem 0 0.4rem 1.5rem;
     position: relative;
     border-bottom: 1px dotted var(--clay-light);
+  }
+  .phase li .luo-line { display: block; }
+  .phase li .en-line {
+    display: block;
+    font-size: 0.88rem;
+    color: var(--leaf);
+    font-style: italic;
+    margin-top: 0.15rem;
   }
   .phase li:before {
     content: "";
@@ -436,13 +466,13 @@
   <h1>Mama Beatrice's Window</h1>
   <div class="hero-luo">Mama Beatrice's Od Madhiambo</div>
   <p class="hero-tag">
-    A small house with a window that opens to the road. Good food, cooked daily,
-    served with a warm heart to students, to nurses, to neighbors, to anyone who is hungry and tired.
+    <span lang="luo">Oda matin machielo gi diriso ma yweyo ne yo. Chiemo maber ma itimo pile, igolo gi chuny ma rom, ne jopuo, ne nesi, ne jirwagi, ne ng'ama ooyo kendo ner.</span><br>
+    <span style="font-size: 0.95rem; color: var(--clay-light); font-style: italic; display:block; margin-top: 0.4rem;" lang="en">A small house with a window that opens to the road. Good food, cooked daily, served with a warm heart to students, to nurses, to neighbors, to anyone who is hungry and tired.</span>
   </p>
   <div class="hero-strip">
-    <span>Open daily</span>
-    <span>M-Pesa accepted</span>
-    <span>Ugali &middot; Chapati &middot; Chai</span>
+    <span><span lang="luo">Yweyoe pile</span> &middot; Open daily</span>
+    <span><span lang="luo">M-Pesa oko</span> &middot; M-Pesa accepted</span>
+    <span><span lang="luo">Kuon &middot; Chapati &middot; Chai</span></span>
   </div>
 </header>
 
@@ -454,16 +484,17 @@
   </p>
   <div class="intro-grid">
     <div>
-      <p>
-        Beatrice is opening a window restaurant from her little house in Western Kenya.
-        It is not a fancy place. It is a window, a counter, a stove, a kettle, and a mother
-        who knows how to feed people.
+      <p class="bilingual">
+        <span class="luo-text">Beatrice yweyo diriso mar chiemo oda matin mage e Koririsaang' ma Podho.</span>
+        <span class="en-text">Beatrice is opening a window restaurant from her little house in Western Kenya.</span>
       </p>
-      <p>
-        Two big crowds walk past her gate every single day:
-        the <strong>college students</strong> who need a hot plate before class,
-        and the <strong>hospital workers</strong> who need a fast meal on a long shift.
-        They will come back when the food is good and the price is fair. That is the whole business.
+      <p class="bilingual">
+        <span class="luo-text">Ok en kabeda mar mabeyo. En diriso, kabuor, kich, keding'a, kod min ma yie timo chiemo ne ji.</span>
+        <span class="en-text">It is not a fancy place. It is a window, a counter, a stove, a kettle, and a mother who knows how to feed people.</span>
+      </p>
+      <p class="bilingual">
+        <span class="luo-text">Lweny ariyo maduong' neno kotel mage pile: <strong>jopuo ma oting'o</strong> ma oyudo chiemo motelo kapok ne somo, kendo <strong>jotich e ospital</strong> ma oyudo chiemo muop apakna molimo. Gibiro duogo ka chiemo ni ber kendo nengo ni maber. Ma en tich gi.</span>
+        <span class="en-text">Two big crowds walk past her gate every single day: the college students who need a hot plate before class, and the hospital workers who need a fast meal on a long shift. They will come back when the food is good and the price is fair. That is the whole business.</span>
       </p>
     </div>
     <div>
@@ -473,10 +504,9 @@
           Good food, good welcome, good measure. When you hear about it, they will come.
         </span>
       </p>
-      <p>
-        The plan is simple: cook five or six things very well. Set up an M-Pesa till.
-        Open WhatsApp. Hand out a few free plates to the nurses. Tell the students to spread the word.
-        Within one month, the window will be known.
+      <p class="bilingual">
+        <span class="luo-text">Rieko ni piny: tim chiemo abich kata auchiel ber ahinya. Los M-Pesa till. Yweyo WhatsApp. Miyo nesi chiemo ma ok ochiw pile. Wak jo puo mondo owang' wach. Kuom dwe achiel, diriso bi yie.</span>
+        <span class="en-text">The plan is simple: cook five or six things very well. Set up an M-Pesa till. Open WhatsApp. Hand out a few free plates to the nurses. Tell the students to spread the word. Within one month, the window will be known.</span>
       </p>
     </div>
   </div>
@@ -485,55 +515,76 @@
 <div class="divider">&middot;&middot;&middot;</div>
 
 <section class="tinted">
-  <h2>The Menu</h2>
+  <h2>Nyagli mar chiemo</h2>
   <p style="font-style: italic; color: var(--leaf); margin-top: -0.25rem; margin-bottom: 0.5rem;">
-    Nyagli ma itimo i kare mar inyalo gombo
+    The Menu &middot; Nyagli ma itimo pile ma inyalo gombo
   </p>
   <p style="margin-bottom: 1rem;">
-    Cook <strong>five to seven dishes every day, not twenty dishes poorly</strong>.
-    This is the rule. Below are the ones that always sell in Western Kenya.
+    <span lang="luo">Tim <strong>chiemo abich giyo abiriyo pile, ok chiemo higni abiriyo ma ok ber</strong>. Ma en ranyisi. E ii yo ma oyudore pile e Koririsaang' ma Podho.</span><br>
+    <span style="font-size: 0.92rem; color: var(--leaf); font-style: italic; display:block; margin-top: 0.3rem;" lang="en">Cook five to seven dishes every day, not twenty dishes poorly. This is the rule. Below are the ones that always sell in Western Kenya.</span>
   </p>
   <div class="menu">
     <div class="dish">
-      <div class="name">Ugali &amp; Fresh Fish</div>
-      <div class="luo-name">Kuon &amp; rech</div>
-      <div class="why">Lake Victoria is close. Tilapia or Nile perch, fried the morning it is caught.</div>
+      <div class="name">Kuon &amp; Rech</div>
+      <div class="luo-name">Ugali &amp; Fresh Fish</div>
+      <div class="why">
+        <span lang="luo">Nam Nam Vietmar ayie. Tilapia kata Nile perch, opukore okinyi ma olwore.</span>
+        <span class="why-en">Lake Victoria is close. Tilapia or Nile perch, fried the morning it is caught.</span>
+      </div>
       <div class="price">150 &ndash; 300 KSh</div>
     </div>
     <div class="dish">
-      <div class="name">Ugali &amp; Local Chicken</div>
-      <div class="luo-name">Kuon &amp; ingokho</div>
-      <div class="why">The weekend plate. Slower to cook, higher price, worth every shilling.</div>
+      <div class="name">Kuon &amp; Ingokho</div>
+      <div class="luo-name">Ugali &amp; Local Chicken</div>
+      <div class="why">
+        <span lang="luo">Nyagli mar jumapil. Telo ng'eyo, nengo matindo, romo sheleng' e achiel.</span>
+        <span class="why-en">The weekend plate. Slower to cook, higher price, worth every shilling.</span>
+      </div>
       <div class="price">200 &ndash; 350 KSh</div>
     </div>
     <div class="dish">
-      <div class="name">Ugali &amp; Sukuma / Managu</div>
-      <div class="luo-name">Kuon &amp; mrenda</div>
-      <div class="why">The everyday plate. Cheap, filling, what every grandmother knows how to cook.</div>
+      <div class="name">Kuon &amp; Mrenda</div>
+      <div class="luo-name">Ugali &amp; Sukuma / Managu</div>
+      <div class="why">
+        <span lang="luo">Nyagli ma pile-pile. Nengo ma it, yomo, gima min dakka oyie timo.</span>
+        <span class="why-en">The everyday plate. Cheap, filling, what every grandmother knows how to cook.</span>
+      </div>
       <div class="price">80 &ndash; 120 KSh</div>
     </div>
     <div class="dish">
-      <div class="name">Githeri / Nduma / Ndengu</div>
-      <div class="luo-name">Ndengu / nduma</div>
-      <div class="why">Student favorite. Maize and beans, or arrow root, or green grams. Fills the belly for hours.</div>
+      <div class="name">Ndengu / Nduma</div>
+      <div class="luo-name">Githeri / Nduma / Ndengu</div>
+      <div class="why">
+        <span lang="luo">Gima jopuo hera. Oduma kod ndagho, kata nduma, kata ndengu. Yomora ichu ma seche mang'eny.</span>
+        <span class="why-en">Student favorite. Maize and beans, or arrow root, or green grams. Fills the belly for hours.</span>
+      </div>
       <div class="price">80 &ndash; 100 KSh</div>
     </div>
     <div class="dish">
-      <div class="name">Chapati &amp; Beans</div>
-      <div class="luo-name">Chapati &amp; ndengu</div>
-      <div class="why">Lunch to go. Travels well. The hospital staff pick this up on their way in.</div>
+      <div class="name">Chapati &amp; Ndengu</div>
+      <div class="luo-name">Chapati &amp; Beans</div>
+      <div class="why">
+        <span lang="luo">Chiemo mar adhi. Nyalo orwa maber. Jotich e ospital kawo ma kapok owinjore.</span>
+        <span class="why-en">Lunch to go. Travels well. The hospital staff pick this up on their way in.</span>
+      </div>
       <div class="price">70 &ndash; 100 KSh</div>
     </div>
     <div class="dish">
       <div class="name">Mandazi &amp; Chai</div>
-      <div class="luo-name">Mandazi &amp; chai</div>
-      <div class="why">The breakfast crowd. Students before class, guards before morning shift.</div>
+      <div class="luo-name">Mandazi &amp; Chai</div>
+      <div class="why">
+        <span lang="luo">Chiemo mar okinyi. Jopuo kapok ne somo, jolworo kapok ne tich mar okinyi.</span>
+        <span class="why-en">The breakfast crowd. Students before class, guards before morning shift.</span>
+      </div>
       <div class="price">50 &ndash; 80 KSh</div>
     </div>
     <div class="dish">
-      <div class="name">Rice &amp; Beef Stew</div>
-      <div class="luo-name">Mchele &amp; nyama</div>
-      <div class="why">The "special plate" for hospital staff who want something different from ugali.</div>
+      <div class="name">Mchele &amp; Nyama</div>
+      <div class="luo-name">Rice &amp; Beef Stew</div>
+      <div class="why">
+        <span lang="luo">"Nyagli ma opogore" ne jotich ospital ma hera gimoro ma ok kuon.</span>
+        <span class="why-en">The "special plate" for hospital staff who want something different from ugali.</span>
+      </div>
       <div class="price">150 &ndash; 200 KSh</div>
     </div>
   </div>
@@ -555,49 +606,97 @@
 
 <!-- PHASES -->
 <section>
-  <h2>The Plan in Four Steps</h2>
+  <h2>Rieko e Steps ang'wen</h2>
   <p style="font-style: italic; color: var(--leaf); margin-top: -0.25rem;">
-    Yo ariyo magi ka winjogo
+    The Plan in Four Steps &middot; Yo ang'wen magi ka winjogo
   </p>
   <div class="phases">
     <div class="phase">
-      <h3>1. Foundation</h3>
-      <div class="weeks">Week 1 &mdash; 2</div>
+      <h3>1. Rutho</h3>
+      <div class="weeks">Foundation &middot; Jumbe 1 &mdash; 2 (achiel gi ariyo)</div>
       <ul>
-        <li>Pick the name &amp; paint a signboard</li>
-        <li>Set up M-Pesa Till (free for customers)</li>
-        <li>Print a small price card by the window</li>
-        <li>Test three recipes with neighbors</li>
+        <li>
+          <span class="luo-line">Yiero nying kendo iwri signboard</span>
+          <span class="en-line">Pick the name &amp; paint a signboard</span>
+        </li>
+        <li>
+          <span class="luo-line">Los M-Pesa Till (a free ne jopayo)</span>
+          <span class="en-line">Set up M-Pesa Till (free for customers)</span>
+        </li>
+        <li>
+          <span class="luo-line">Printo kad mar nengo matin kanyo mar diriso</span>
+          <span class="en-line">Print a small price card by the window</span>
+        </li>
+        <li>
+          <span class="luo-line">Lokre resit ariyo gi jirwagi</span>
+          <span class="en-line">Test three recipes with neighbors</span>
+        </li>
       </ul>
     </div>
     <div class="phase">
-      <h3>2. Launch</h3>
-      <div class="weeks">Week 3 &mdash; 4</div>
+      <h3>2. Yweyo</h3>
+      <div class="weeks">Launch &middot; Jumbe 3 &mdash; 4 (adek gi ang'wen)</div>
       <ul>
-        <li>Open WhatsApp Business with menu</li>
-        <li>Post food photos every morning on Status</li>
-        <li>Free plate to five nurses on day one</li>
-        <li>Student ambassador: two plates for two shares</li>
+        <li>
+          <span class="luo-line">Yweyo WhatsApp Business kod nyagli</span>
+          <span class="en-line">Open WhatsApp Business with menu</span>
+        </li>
+        <li>
+          <span class="luo-line">Writo tich chiemo okinyi pile e Status</span>
+          <span class="en-line">Post food photos every morning on Status</span>
+        </li>
+        <li>
+          <span class="luo-line">Miyo nesi abich nyagli a free chieng' achiel</span>
+          <span class="en-line">Free plate to five nurses on day one</span>
+        </li>
+        <li>
+          <span class="luo-line">Japuo ma jonyolo: nyagli ariyo ne olokere ariyo</span>
+          <span class="en-line">Student ambassador: two plates for two shares</span>
+        </li>
       </ul>
     </div>
     <div class="phase">
-      <h3>3. Steady Crowd</h3>
-      <div class="weeks">Month 2 &mdash; 3</div>
+      <h3>3. Ji ma oyudo</h3>
+      <div class="weeks">Steady Crowd &middot; Dwe 2 &mdash; 3 (ariyo gi adek)</div>
       <ul>
-        <li>Same six dishes, same hours, every day</li>
-        <li>Delivery to the hospital gate for night shift</li>
-        <li>Sunday plate: rice &amp; chicken for families</li>
-        <li>Track every sale in a small book</li>
+        <li>
+          <span class="luo-line">Nyagli auchiel kaka kamano, seche kaka kamano, pile</span>
+          <span class="en-line">Same six dishes, same hours, every day</span>
+        </li>
+        <li>
+          <span class="luo-line">Golo ne olwang' mar ospital ne pak mar otieno</span>
+          <span class="en-line">Delivery to the hospital gate for night shift</span>
+        </li>
+        <li>
+          <span class="luo-line">Nyagli mar jumapil: mchele kod ingokho ne joot</span>
+          <span class="en-line">Sunday plate: rice &amp; chicken for families</span>
+        </li>
+        <li>
+          <span class="luo-line">Wriyo chuwo moromo pile e kitap matin</span>
+          <span class="en-line">Track every sale in a small book</span>
+        </li>
       </ul>
     </div>
     <div class="phase">
-      <h3>4. Grow</h3>
-      <div class="weeks">Month 4 onward</div>
+      <h3>4. Nyalo</h3>
+      <div class="weeks">Grow &middot; Dwe 4 (ang'wen) kod mabiro</div>
       <ul>
-        <li>Add a second helper when the queue is long</li>
-        <li>Birthday plates for hospital staff</li>
-        <li>Chapati in bulk for road travelers</li>
-        <li>Save half of every extra shilling</li>
+        <li>
+          <span class="luo-line">Miyo jowiyo ariyo kar ka dhoot ni tayi</span>
+          <span class="en-line">Add a second helper when the queue is long</span>
+        </li>
+        <li>
+          <span class="luo-line">Nyagli mar nyuol ne jotich ospital</span>
+          <span class="en-line">Birthday plates for hospital staff</span>
+        </li>
+        <li>
+          <span class="luo-line">Chapati mang'eny ne jolal e yo</span>
+          <span class="en-line">Chapati in bulk for road travelers</span>
+        </li>
+        <li>
+          <span class="luo-line">Kano nusu mar sheleng' mopogore</span>
+          <span class="en-line">Save half of every extra shilling</span>
+        </li>
       </ul>
     </div>
   </div>
@@ -619,253 +718,275 @@
 
 <!-- PAYMENT -->
 <section style="padding-bottom: 5rem;">
-  <h2>How to Pay</h2>
+  <h2>Yot unyalo chulo</h2>
   <p style="font-style: italic; color: var(--leaf); margin-top: -0.25rem;">
-    Yot unyalo chulo
+    How to Pay
   </p>
   <div style="background: var(--cream); padding: 2rem; border-left: 5px solid var(--leaf); margin-top: 1.5rem;">
     <p style="font-size: 1.1rem; margin-bottom: 1rem;">
-      <strong>M-Pesa Till Number:</strong> to be printed on the window once set up<br>
-      <strong>Cash:</strong> always welcome, always have small change ready<br>
-      <strong>WhatsApp Order:</strong> send a message, pay on pickup, walk away happy
+      <strong><span lang="luo">Namba mar M-Pesa Till:</span></strong> <span lang="luo">bip</span><span lang="en">to be</span><span lang="luo">r e diriso kanyo ma olosre</span> <span lang="en" style="color: var(--leaf); font-style: italic;">to be printed on the window once set up</span><br>
+      <strong><span lang="luo">Pesa e lwete:</span></strong> <span lang="luo">pile ma pile, kawo kichni matin pile</span> <span lang="en" style="color: var(--leaf); font-style: italic;">always welcome, always have small change ready</span><br>
+      <strong><span lang="luo">Wach ne WhatsApp:</span></strong> <span lang="luo">oro wach, chulo ka iyudo, wuog gi mor</span> <span lang="en" style="color: var(--leaf); font-style: italic;">send a message, pay on pickup, walk away happy</span>
     </p>
     <p style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--clay-light);">
-      <em>Tip:</em> the till number is for customers, not for you. It is their number to send to,
-      not for you to receive. That small detail is what makes the difference between
-      a professional and a hobby.
+      <em><span lang="luo">Wach motelo:</span></em> <span lang="luo">namba mar till en ne jopayo, ok ne iyie. En namba ma gibiro oroe, ok ma iyudo. Ranyisi matin ma en gima weng'o gedo kod gima tich ma opogore giyo.</span><br>
+      <em style="color: var(--leaf);"><span lang="en">Tip:</span></em> <span lang="en" style="font-style: italic; color: var(--leaf);">the till number is for customers, not for you. It is their number to send to, not for you to receive. That small detail is what makes the difference between a professional and a hobby.</span>
     </p>
   </div>
 </section>
 
 <!-- MONEY & MATH -->
 <section class="tinted" style="margin-top: 2rem;">
-  <h2>Money &amp; Math</h2>
+  <h2>Pesa &amp; Puo</h2>
   <p style="font-style: italic; color: var(--leaf); margin-top: -0.25rem; margin-bottom: 0.5rem;">
-    Puonj mar pesa
+    Money &amp; Math &middot; Puonj mar pesa
   </p>
   <p style="margin-bottom: 2rem;">
-    Five small formulas that keep a small kitchen honest. Write the answers in a notebook.
-    After one week, you will know more about your business than most people learn in a year.
+    <span lang="luo">Puo ariyo ma podho moko aya ma kelo kichni e yawore. Wri dwok e kitap. Kuom juma achiel, ibiro yie tich mari moloyo ma ji mang'eny oyien e higa.</span><br>
+    <span style="font-size: 0.92rem; color: var(--leaf); font-style: italic; display:block; margin-top: 0.3rem;" lang="en">Five small formulas that keep a small kitchen honest. Write the answers in a notebook. After one week, you will know more about your business than most people learn in a year.</span>
   </p>
 
   <!-- Reference prices -->
-  <h3 style="color: var(--leaf); margin-bottom: 0.75rem;">Reference Prices (Kenya, June 2026)</h3>
+  <h3 style="color: var(--leaf); margin-bottom: 0.75rem;">Nengo mar Chwiri (Koririsaang' ma Podho, Ogwar 2026)</h3>
   <p style="font-size: 0.95rem; margin-bottom: 0.5rem;">
-    These are real prices from Numbeo Kenya. Western Kenya is usually 10 to 15 percent cheaper than Nairobi for the same item. Replace any number with the price you actually pay at your local market.
+    <span lang="luo">Ma en nengo ma Luo e Numbeo Kenya. Koririsaang' ma Podho donjo it (10-15%) matin moloyo Nairobi ne gimoro kaka kamano. Lok namba moromo amora gi nengo ma ichiw e maket e i.</span><br>
+    <span style="font-size: 0.9rem; color: var(--leaf); font-style: italic; display:block; margin-top: 0.2rem;" lang="en">These are real prices from Numbeo Kenya. Western Kenya is usually 10 to 15 percent cheaper than Nairobi for the same item. Replace any number with the price you actually pay at your local market.</span>
   </p>
   <table class="price-table">
     <thead>
-      <tr><th>Item</th><th>Unit</th><th class="price-col">Price (KSh)</th></tr>
+      <tr><th>Chwiri / Item</th><th>Chilo / Unit</th><th class="price-col">Nengo (KSh)</th></tr>
     </thead>
     <tbody>
-      <tr><td>Maize flour (unga)</td><td>2 kg packet</td><td class="price-col">220 - 260</td></tr>
-      <tr><td>White rice (mchele)</td><td>1 kg</td><td class="price-col">200 - 240</td></tr>
+      <tr><td>Unga (maize flour)</td><td>2 kg packet</td><td class="price-col">220 - 260</td></tr>
+      <tr><td>Mchele (white rice)</td><td>1 kg</td><td class="price-col">200 - 240</td></tr>
       <tr><td>Sukuma wiki / managu</td><td>1 bunch</td><td class="price-col">30 - 50</td></tr>
-      <tr><td>Tomatoes</td><td>1 kg</td><td class="price-col">100 - 130</td></tr>
-      <tr><td>Onions</td><td>1 kg</td><td class="price-col">115 - 145</td></tr>
-      <tr><td>Cooking oil</td><td>1 litre</td><td class="price-col">350 - 420</td></tr>
-      <tr><td>Beef (with bone)</td><td>1 kg</td><td class="price-col">650 - 750</td></tr>
-      <tr><td>Chicken (whole)</td><td>1 kg</td><td class="price-col">700 - 850</td></tr>
-      <tr><td>Tilapia (fresh)</td><td>1 kg</td><td class="price-col">500 - 650</td></tr>
-      <tr><td>Eggs</td><td>tray of 30</td><td class="price-col">480 - 560</td></tr>
-      <tr><td>Milk (fresh)</td><td>1 litre</td><td class="price-col">90 - 110</td></tr>
-      <tr><td>Tea leaves (majani)</td><td>250 g</td><td class="price-col">180 - 230</td></tr>
-      <tr><td>Sugar</td><td>1 kg</td><td class="price-col">170 - 200</td></tr>
-      <tr><td>Charcoal</td><td>1 large bag</td><td class="price-col">1,400 - 1,800</td></tr>
-      <tr><td>Kerosene</td><td>1 litre</td><td class="price-col">180 - 210</td></tr>
-      <tr><td>Cooking salt</td><td>1 kg</td><td class="price-col">60 - 80</td></tr>
+      <tr><td>Nyanya (tomatoes)</td><td>1 kg</td><td class="price-col">100 - 130</td></tr>
+      <tr><td>Kitungu (onions)</td><td>1 kg</td><td class="price-col">115 - 145</td></tr>
+      <tr><td>Marge (cooking oil)</td><td>1 litre</td><td class="price-col">350 - 420</td></tr>
+      <tr><td>Nyama rang'ala (beef with bone)</td><td>1 kg</td><td class="price-col">650 - 750</td></tr>
+      <tr><td>Ingokho (chicken whole)</td><td>1 kg</td><td class="price-col">700 - 850</td></tr>
+      <tr><td>Rech (tilapia fresh)</td><td>1 kg</td><td class="price-col">500 - 650</td></tr>
+      <tr><td>Yien (eggs)</td><td>tray of 30</td><td class="price-col">480 - 560</td></tr>
+      <tr><td>Chwal (fresh milk)</td><td>1 litre</td><td class="price-col">90 - 110</td></tr>
+      <tr><td>Majani (tea leaves)</td><td>250 g</td><td class="price-col">180 - 230</td></tr>
+      <tr><td>Sukari</td><td>1 kg</td><td class="price-col">170 - 200</td></tr>
+      <tr><td>Magadi (charcoal)</td><td>1 large bag</td><td class="price-col">1,400 - 1,800</td></tr>
+      <tr><td>Kerosine</td><td>1 litre</td><td class="price-col">180 - 210</td></tr>
+      <tr><td>Ombulu (cooking salt)</td><td>1 kg</td><td class="price-col">60 - 80</td></tr>
     </tbody>
   </table>
   <p class="formula-note">
-    Update these numbers the first time you walk into the market. They will be different from yours, and that difference is your edge.
+    <span lang="luo">Lok namba gi go nyim chieng' ma ineno maket. Gibiro pok gi i, kendo gima opogore e gima miyi winjo.</span><br>
+    <span style="font-size: 0.9rem;" lang="en">Update these numbers the first time you walk into the market. They will be different from yours, and that difference is your edge.</span>
   </p>
 
   <!-- FORMULA 1 -->
   <div class="formula-card">
-    <span class="formula-num">1</span><h3>Food Cost Percentage</h3>
-    <p style="margin-top: 0.75rem;">
-      Every dish should cost you <strong>no more than 35 percent</strong> of what you sell it for. If your plate costs more than that to make, you are working for the food, not the food working for you.
+    <span class="formula-num">1</span><h3>Puo mar Nengo mar Chiemo</h3>
+    <p style="margin-top: 0.75rem; font-style: italic; color: var(--leaf); font-size: 0.92rem;">Food Cost Percentage</p>
+    <p class="bilingual" style="margin-top: 0.5rem;">
+      <span class="luo-text">Nyagli moromo amora ok onego oyudi it <strong>malo e 35 percent</strong> mar gima inywalo. Ka nyagli mari ni oyudo chuwo moloyo ma, itiyo ne chiemo, ok ne chiemo tiyo ne iyie.</span>
+      <span class="en-text">Every dish should cost you no more than 35 percent of what you sell it for. If your plate costs more than that to make, you are working for the food, not the food working for you.</span>
     </p>
     <div class="formula-eq">
       food cost % = (ingredients cost / selling price) &times; 100
     </div>
     <div class="formula-example">
-      <strong>Example:</strong> Ugali and fish. The fish (200 g) is KSh 120. The ugali flour (100 g) is KSh 12. The oil and salt is KSh 15. <strong>Total ingredients: KSh 147.</strong><br>
-      You sell the plate for KSh 250. So: (147 / 250) &times; 100 = <strong>58.8 percent.</strong><br>
-      <strong>This plate is too expensive to make.</strong> Either raise the price to KSh 450, or buy smaller fish, or reduce the portion. Do not just accept it.
+      <strong><span lang="luo">Nonro:</span></strong> <span lang="luo">Kuon kod rech. Rech (200 g) en KSh 120. Unga (100 g) en KSh 12. Marge kod ombulu en KSh 15.</span> <strong><span lang="luo">Chuwo duto: KSh 147.</span></strong><br>
+      <span lang="luo">Inywalo nyagli ne KSh 250. Ma: (147 / 250) &times; 100 =</span> <strong><span lang="luo">58.8 percent.</span></strong><br>
+      <strong><span lang="luo">Nyagli ma ni chuwo matek. Ket nengo ne KSh 450, kata ng'i rech matin, kata kelo kichni. Ok inyalo weyo kaka kamano.</span></strong><br>
+      <em style="color: var(--leaf);"><span lang="en">Example: Ugali and fish. The fish (200 g) is KSh 120. The ugali flour (100 g) is KSh 12. The oil and salt is KSh 15. Total ingredients: KSh 147. You sell the plate for KSh 250. So: (147 / 250) &times; 100 = 58.8 percent. This plate is too expensive to make. Either raise the price to KSh 450, or buy smaller fish, or reduce the portion. Do not just accept it.</span></em>
     </div>
     <p class="formula-note">
-      The healthier number for a window restaurant is 25 to 35 percent. Anything above 40 means your profit is too thin and one bad day will wipe out a week of work.
+      <span lang="luo">Nengo maber ne diriso en 25-35 percent. Gima malo 40 nyalo seyo ni chuwo mari oyie kendo chieng' achiel ma ooyo bi ketho juma moromo gi tich.</span><br>
+      <span style="font-size: 0.9rem;" lang="en">The healthier number for a window restaurant is 25 to 35 percent. Anything above 40 means your profit is too thin and one bad day will wipe out a week of work.</span>
     </p>
 
-    <p style="margin-top: 1.5rem; font-weight: bold; color: var(--leaf);">Try it yourself:</p>
+    <p style="margin-top: 1.5rem; font-weight: bold; color: var(--leaf);">Lok iwuon: / Try it yourself:</p>
     <div class="calc" data-calc="food-cost">
       <div class="calc-row">
-        <label for="fc-cost">Cost to make the plate (KSh)</label>
+        <label for="fc-cost"><span lang="luo">Chuwo mar timo nyagli (KSh)</span> &middot; <span lang="en" style="font-size: 0.85rem; color: var(--leaf); font-style: italic;">Cost to make the plate</span></label>
         <input type="number" id="fc-cost" min="0" step="1" placeholder="147">
       </div>
       <div class="calc-row">
-        <label for="fc-price">Selling price (KSh)</label>
+        <label for="fc-price"><span lang="luo">Nengo mar chuwo (KSh)</span> &middot; <span lang="en" style="font-size: 0.85rem; color: var(--leaf); font-style: italic;">Selling price</span></label>
         <input type="number" id="fc-price" min="1" step="1" placeholder="250">
       </div>
-      <div class="calc-result" id="fc-result">Enter the two numbers above.</div>
+      <div class="calc-result" id="fc-result">Ket namba ariyo / Enter the two numbers above.</div>
     </div>
   </div>
 
   <!-- FORMULA 2 -->
   <div class="formula-card">
-    <span class="formula-num">2</span><h3>Daily Break-Even</h3>
-    <p style="margin-top: 0.75rem;">
-      How many plates do you need to sell each day before you start making a profit, not just covering costs. This is the number that tells you when to keep cooking and when to close early.
+    <span class="formula-num">2</span><h3>Nengo mar Pile mar Wuoyo</h3>
+    <p style="margin-top: 0.75rem; font-style: italic; color: var(--leaf); font-size: 0.92rem;">Daily Break-Even</p>
+    <p class="bilingual" style="margin-top: 0.5rem;">
+      <span class="luo-text">Nyagli adi ma onego unywalo pile kapok in to chuwo, ok gima kelo chuwo kende. Ma en namba ma nyiso seche ma podho timo chiemo kod seche ma onego iling'.</span>
+      <span class="en-text">How many plates do you need to sell each day before you start making a profit, not just covering costs. This is the number that tells you when to keep cooking and when to close early.</span>
     </p>
     <div class="formula-eq">
       break-even plates = daily fixed costs / average profit per plate
     </div>
     <div class="formula-example">
-      <strong>Example:</strong> Your fixed costs each day (rent share, charcoal, kerosene, water, phone, M-Pesa fees) = KSh 600. Your average profit per plate (selling price minus ingredients minus gas) = KSh 120.<br>
-      Break-even: 600 / 120 = <strong>5 plates per day</strong> just to cover your costs.<br>
-      Every plate after plate number 5 is money in your pocket. Plate number 25 is real profit. Plate number 40 is a good day.
+      <strong><span lang="luo">Nonro:</span></strong> <span lang="luo">Chuwo mo piny pile (seko mar oda, magadi, kerosine, pi, simu, M-Pesa) = KSh 600. Chuwo moyudore mar nyagli achiel (nengo mar chuwo miyo chal chal) = KSh 120.</span><br>
+      <span lang="luo">Wuoyo: 600 / 120 =</span> <strong><span lang="luo">nyagli 5 pile</span></strong> <span lang="luo">ma kelo chuwo kende.</span><br>
+      <span lang="luo">Nyagli moromo amora kuom nyagli 5 en pesa e pokomari. Nyagli 25 en chuwo ma oluwo. Nyagli 40 en chieng' maber.</span><br>
+      <em style="color: var(--leaf);"><span lang="en">Example: Your fixed costs each day (rent share, charcoal, kerosene, water, phone, M-Pesa fees) = KSh 600. Your average profit per plate (selling price minus ingredients minus gas) = KSh 120. Break-even: 600 / 120 = 5 plates per day just to cover your costs. Every plate after plate number 5 is money in your pocket. Plate number 25 is real profit. Plate number 40 is a good day.</span></em>
     </div>
     <p class="formula-note">
-      For a Western Kenya window restaurant, 25 to 40 plates per day is a healthy working week. Less than 15 means you are losing money and need to adjust prices or find more customers.
+      <span lang="luo">Ne diriso e Koririsaang' ma Podho, nyagli 25-40 pile en juma maber mar tich. Matino 15 nyiso ni ilos pesa kendo onego ilok nengo kata nono jopayo mang'eny.</span><br>
+      <span style="font-size: 0.9rem;" lang="en">For a Western Kenya window restaurant, 25 to 40 plates per day is a healthy working week. Less than 15 means you are losing money and need to adjust prices or find more customers.</span>
     </p>
 
-    <p style="margin-top: 1.5rem; font-weight: bold; color: var(--leaf);">Try it yourself:</p>
+    <p style="margin-top: 1.5rem; font-weight: bold; color: var(--leaf);">Lok iwuon: / Try it yourself:</p>
     <div class="calc" data-calc="breakeven">
       <div class="calc-row">
-        <label for="be-fixed">Your fixed costs per day (KSh)</label>
+        <label for="be-fixed"><span lang="luo">Chuwo mo piny pile (KSh)</span> &middot; <span lang="en" style="font-size: 0.85rem; color: var(--leaf); font-style: italic;">Your fixed costs per day</span></label>
         <input type="number" id="be-fixed" min="0" step="1" placeholder="600">
       </div>
       <div class="calc-row">
-        <label for="be-profit">Average profit per plate (KSh)</label>
+        <label for="be-profit"><span lang="luo">Chuwo moyudore mar nyagli achiel (KSh)</span> &middot; <span lang="en" style="font-size: 0.85rem; color: var(--leaf); font-style: italic;">Average profit per plate</span></label>
         <input type="number" id="be-profit" min="1" step="1" placeholder="120">
       </div>
-      <div class="calc-result" id="be-result">Enter the two numbers above.</div>
+      <div class="calc-result" id="be-result">Ket namba ariyo / Enter the two numbers above.</div>
     </div>
   </div>
 
   <!-- FORMULA 3 -->
   <div class="formula-card">
-    <span class="formula-num">3</span><h3>Reorder Point</h3>
-    <p style="margin-top: 0.75rem;">
-      Never run out of fish on a Friday. Never run out of ugali flour on a Saturday morning. This formula tells you when to walk to the market.
+    <span class="formula-num">3</span><h3>Seche mar Wuoyo</h3>
+    <p style="margin-top: 0.75rem; font-style: italic; color: var(--leaf); font-size: 0.92rem;">Reorder Point</p>
+    <p class="bilingual" style="margin-top: 0.5rem;">
+      <span class="luo-text">Inyalo weyo rech gungo e Jumapil. Inyalo weyo unga gungo okinyi Jumapil. Puo ma nyiso seche ma onego idhi e maket.</span>
+      <span class="en-text">Never run out of fish on a Friday. Never run out of ugali flour on a Saturday morning. This formula tells you when to walk to the market.</span>
     </p>
     <div class="formula-eq">
       reorder point = (average daily usage &times; lead time in days) + safety stock
     </div>
     <div class="formula-example">
-      <strong>Example:</strong> You use about 2 kg of fish per day. The market is 2 days away (today and Saturday, market day is Monday). You want a 1-day safety buffer so you do not run dry.<br>
-      Reorder point: (2 &times; 2) + 2 = <strong>6 kg remaining.</strong><br>
-      When your fish gets down to 6 kg, send someone to the market the next morning. <span class="reorder-tag">REORDER AT 6 KG</span>
+      <strong><span lang="luo">Nonro:</span></strong> <span lang="luo">Itiyo kod rech 2 kg pile. Maket en chieng' ariyo molimo (nino kendo Jumapil, maket en Wuoktich). Ihera chwiri ma kelo odhiambo 1 chieng' mondo ok unyalo gungo.</span><br>
+      <span lang="luo">Wuoyo: (2 &times; 2) + 2 =</span> <strong><span lang="luo">6 kg ma odong'.</span></strong><br>
+      <span lang="luo">Ka rech mari odong' e 6 kg, or jomoko dhi maket okinyi ma oluwo.</span> <span class="reorder-tag">WUOYO E 6 KG</span><br>
+      <em style="color: var(--leaf);"><span lang="en">Example: You use about 2 kg of fish per day. The market is 2 days away (today and Saturday, market day is Monday). You want a 1-day safety buffer so you do not run dry. Reorder point: (2 &times; 2) + 2 = 6 kg remaining. When your fish gets down to 6 kg, send someone to the market the next morning. REORDER AT 6 KG</span></em>
     </div>
     <p class="formula-note">
-      Lead time means how many days between realizing you need something and having it in your kitchen. In rural Kenya, that is usually 1 to 3 days depending on the item and your transport.
+      <span lang="luo">Seche ma yudo timo godo namba mar chieng' koa kuom sa ma iyie ni in kod kod sa ma oyudo e kichni. E Koririsaang' ma Podho, ma en chieng' 1-3 kata ka gimoro opogore kod yore mag loyo.</span><br>
+      <span style="font-size: 0.9rem;" lang="en">Lead time means how many days between realizing you need something and having it in your kitchen. In rural Kenya, that is usually 1 to 3 days depending on the item and your transport.</span>
     </p>
 
-    <p style="margin-top: 1.5rem; font-weight: bold; color: var(--leaf);">Try it yourself:</p>
+    <p style="margin-top: 1.5rem; font-weight: bold; color: var(--leaf);">Lok iwuon: / Try it yourself:</p>
     <div class="calc" data-calc="reorder">
       <div class="calc-row">
-        <label for="ro-usage">How much you use per day (kg)</label>
+        <label for="ro-usage"><span lang="luo">Adi ma itiyo pile (kg)</span> &middot; <span lang="en" style="font-size: 0.85rem; color: var(--leaf); font-style: italic;">How much you use per day</span></label>
         <input type="number" id="ro-usage" min="0" step="0.1" placeholder="2">
       </div>
       <div class="calc-row">
-        <label for="ro-lead">Days until you can get more</label>
+        <label for="ro-lead"><span lang="luo">Ndalo mak mana ka inyalo yudo mang'eny</span> &middot; <span lang="en" style="font-size: 0.85rem; color: var(--leaf); font-style: italic;">Days until you can get more</span></label>
         <input type="number" id="ro-lead" min="0" step="1" placeholder="2">
       </div>
       <div class="calc-row">
-        <label for="ro-safety">Safety buffer (days)</label>
+        <label for="ro-safety"><span lang="luo">Chwiri ma ok oyud (ndalo)</span> &middot; <span lang="en" style="font-size: 0.85rem; color: var(--leaf); font-style: italic;">Safety buffer (days)</span></label>
         <input type="number" id="ro-safety" min="0" step="1" placeholder="1">
       </div>
-      <div class="calc-result" id="ro-result">Enter the three numbers above.</div>
+      <div class="calc-result" id="ro-result">Ket namba adek / Enter the three numbers above.</div>
     </div>
   </div>
 
   <!-- FORMULA 4 -->
   <div class="formula-card">
-    <span class="formula-num">4</span><h3>Profit Split</h3>
-    <p style="margin-top: 0.75rem;">
-      A simple rule that keeps the business alive and the household fed at the same time. Do not skip this. Every shilling that comes in has a job before it gets spent.
+    <span class="formula-num">4</span><h3>Pogop Chuwogo</h3>
+    <p style="margin-top: 0.75rem; font-style: italic; color: var(--leaf); font-size: 0.92rem;">Profit Split</p>
+    <p class="bilingual" style="margin-top: 0.5rem;">
+      <span class="luo-text">Ranyisi ma piny ma kelo tich tich kendo oda podho chiemo kuom kinde kaka kamano. Inyalo los gik ma. Sheleng' moromo amora ma donjo ni tich kapok otim gik.</span>
+      <span class="en-text">A simple rule that keeps the business alive and the household fed at the same time. Do not skip this. Every shilling that comes in has a job before it gets spent.</span>
     </p>
     <div class="formula-eq">
       50% restock &nbsp;|&nbsp; 30% household &nbsp;|&nbsp; 20% savings
     </div>
     <div class="formula-example">
-      <strong>Example:</strong> At the end of the day, your till and cash together total KSh 2,400.<br>
-      <strong>KSh 1,200</strong> stays in the kitchen for tomorrow's stock (flour, fish, charcoal, sukuma, oil).<br>
-      <strong>KSh 720</strong> goes to the household (rent, school, soap, the small things).<br>
-      <strong>KSh 480</strong> goes into a separate savings envelope. Do not touch this for 3 months. After 3 months you will have enough to buy a second jiko (stove) or repair the window frame.
+      <strong><span lang="luo">Nonro:</span></strong> <span lang="luo">E giko mar chieng', till kod pesa e lwete duto en KSh 2,400.</span><br>
+      <strong>KSh 1,200</strong> <span lang="luo">odong' e kichni ne chuwo mar nyikine (unga, rech, magadi, mrenda, marge).</span><br>
+      <strong>KSh 720</strong> <span lang="luo">dhi e odhoge (seko, skul, sabuni, gik matin).</span><br>
+      <strong>KSh 480</strong> <span lang="luo">dhi e kepa mar kano. Inyalo ng'ado gik ma kuom dwe 3. Kuom dwe 3 ibiro ni yudo chuwo mang'eny na inyalo golo jiko mar ariyo kata ngeyo diriso.</span><br>
+      <em style="color: var(--leaf);"><span lang="en">Example: At the end of the day, your till and cash together total KSh 2,400. KSh 1,200 stays in the kitchen for tomorrow's stock. KSh 720 goes to the household. KSh 480 goes into a separate savings envelope. Do not touch this for 3 months. After 3 months you will have enough to buy a second jiko (stove) or repair the window frame.</span></em>
     </div>
     <p class="formula-note">
-      The savings is not optional. It is the seed of every future improvement. Even KSh 100 per day saved is KSh 3,000 per month and KSh 36,000 per year. That is a new door, a new sign, or three months of rent covered if the rains come.
+      <span lang="luo">Kanong'o ok en gima inyalo golo. En bumbo mar gik moromo amora ma biro. Kata KSh 100 pile ma okan en KSh 3,000 dwe achiel kendo KSh 36,000 higa. Ma en dho manyien, sign manyien, kata dwe adek mar seko ka koth owuok.</span><br>
+      <span style="font-size: 0.9rem;" lang="en">The savings is not optional. It is the seed of every future improvement. Even KSh 100 per day saved is KSh 3,000 per month and KSh 36,000 per year. That is a new door, a new sign, or three months of rent covered if the rains come.</span>
     </p>
 
-    <p style="margin-top: 1.5rem; font-weight: bold; color: var(--leaf);">Try it yourself:</p>
+    <p style="margin-top: 1.5rem; font-weight: bold; color: var(--leaf);">Lok iwuon: / Try it yourself:</p>
     <div class="calc" data-calc="split">
       <div class="calc-row">
-        <label for="sp-total">Total you took in today (KSh)</label>
+        <label for="sp-total"><span lang="luo">Chuwo duto ma iyudo nino (KSh)</span> &middot; <span lang="en" style="font-size: 0.85rem; color: var(--leaf); font-style: italic;">Total you took in today</span></label>
         <input type="number" id="sp-total" min="0" step="1" placeholder="2400">
       </div>
-      <div class="calc-result" id="sp-result">Enter the number above.</div>
+      <div class="calc-result" id="sp-result">Ket namba / Enter the number above.</div>
     </div>
   </div>
 
   <!-- FORMULA 5 -->
   <div class="formula-card">
-    <span class="formula-num">5</span><h3>M-Pesa Daily Tally</h3>
-    <p style="margin-top: 0.75rem;">
-      Every evening, before you sleep, three numbers must match. If they do not, something went wrong and you need to find it tonight, not tomorrow.
+    <span class="formula-num">5</span><h3>Kwan mar M-Pesa mar Pile</h3>
+    <p style="margin-top: 0.75rem; font-style: italic; color: var(--leaf); font-size: 0.92rem;">M-Pesa Daily Tally</p>
+    <p class="bilingual" style="margin-top: 0.5rem;">
+      <span class="luo-text">Otieno, kapok ininjo, namba adek mar nyaka riek. Ka ok gi rieko, gimoro osep kendo onego inon nyaka nino ma, ok nyikine.</span>
+      <span class="en-text">Every evening, before you sleep, three numbers must match. If they do not, something went wrong and you need to find it tonight, not tomorrow.</span>
     </p>
     <div class="formula-eq">
       M-Pesa till total + cash in hand + credit given out = expected from sales
     </div>
     <div class="formula-example">
-      <strong>Example:</strong> You served 30 plates. Average plate was KSh 130. So you should have KSh 3,900 total.<br>
-      M-Pesa till message says: KSh 2,100 received today.<br>
-      Cash in your tin: KSh 1,500.<br>
-      Two students owe you KSh 100 each (you let them pay later): KSh 200.<br>
-      Total: 2,100 + 1,500 + 200 = <strong>KSh 3,800.</strong><br>
-      Expected: 3,900. Difference: <strong>KSh 100 short.</strong> Find it now: a wrong change given, a plate not recorded, or a till you forgot to check.
+      <strong><span lang="luo">Nonro:</span></strong> <span lang="luo">Ikuondo nyagli 30. Nyagli achiel kepo ne KSh 130. Ma en KSh 3,900 duto ma otimo.</span><br>
+      <span lang="luo">Wach mar M-Pesa till nyiso: KSh 2,100 oyudo nino.</span><br>
+      <span lang="luo">Pesa e kepa mari: KSh 1,500.</span><br>
+      <span lang="luo">Jopuo ariyo owiyi KSh 100 (iwa gi chulo kinde): KSh 200.</span><br>
+      <span lang="luo">Duto: 2,100 + 1,500 + 200 =</span> <strong><span lang="luo">KSh 3,800.</span></strong><br>
+      <span lang="luo">Ma otimo: 3,900. Gima pok: KSh 100 ma geng'o. Nono nino: kichni mar awacho ma osetiek, nyagli ma ok owinj, kata till ma osewoyo.</span><br>
+      <em style="color: var(--leaf);"><span lang="en">Example: You served 30 plates. Average plate was KSh 130. So you should have KSh 3,900 total. M-Pesa till message says: KSh 2,100 received today. Cash in your tin: KSh 1,500. Two students owe you KSh 100 each (you let them pay later): KSh 200. Total: 2,100 + 1,500 + 200 = KSh 3,800. Expected: 3,900. Difference: KSh 100 short. Find it now.</span></em>
     </div>
     <p class="formula-note">
-      A small difference every day becomes a big loss every month. The math does not lie. If you do this for 30 days, you will find the leak.
+      <span lang="luo">Gima geng'o matin pile opogo gi loso ma owuok pile. Puo ok miyo hul. Ka utimo gik ma kuom ndalo 30, ubiro nono wiya ma oseloso pesa.</span><br>
+      <span style="font-size: 0.9rem;" lang="en">A small difference every day becomes a big loss every month. The math does not lie. If you do this for 30 days, you will find the leak.</span>
     </p>
 
-    <p style="margin-top: 1.5rem; font-weight: bold; color: var(--leaf);">Try it yourself:</p>
+    <p style="margin-top: 1.5rem; font-weight: bold; color: var(--leaf);">Lok iwuon: / Try it yourself:</p>
     <div class="calc" data-calc="tally">
       <div class="calc-row">
-        <label for="ta-plates">Plates served today</label>
+        <label for="ta-plates"><span lang="luo">Nyagli ma otonyo nino</span> &middot; <span lang="en" style="font-size: 0.85rem; color: var(--leaf); font-style: italic;">Plates served today</span></label>
         <input type="number" id="ta-plates" min="0" step="1" placeholder="30">
       </div>
       <div class="calc-row">
-        <label for="ta-avg">Average price per plate (KSh)</label>
+        <label for="ta-avg"><span lang="luo">Nengo mar kepo mar nyagli achiel (KSh)</span> &middot; <span lang="en" style="font-size: 0.85rem; color: var(--leaf); font-style: italic;">Average price per plate</span></label>
         <input type="number" id="ta-avg" min="0" step="1" placeholder="130">
       </div>
       <div class="calc-row">
-        <label for="ta-mpesa">M-Pesa till total (KSh)</label>
+        <label for="ta-mpesa"><span lang="luo">Chuwo mar M-Pesa till (KSh)</span> &middot; <span lang="en" style="font-size: 0.85rem; color: var(--leaf); font-style: italic;">M-Pesa till total</span></label>
         <input type="number" id="ta-mpesa" min="0" step="1" placeholder="2100">
       </div>
       <div class="calc-row">
-        <label for="ta-cash">Cash in your tin (KSh)</label>
+        <label for="ta-cash"><span lang="luo">Pesa e kepa mari (KSh)</span> &middot; <span lang="en" style="font-size: 0.85rem; color: var(--leaf); font-style: italic;">Cash in your tin</span></label>
         <input type="number" id="ta-cash" min="0" step="1" placeholder="1500">
       </div>
       <div class="calc-row">
-        <label for="ta-credit">Credit given out (KSh)</label>
+        <label for="ta-credit"><span lang="luo">Chuwo ma omiyo kinde (KSh)</span> &middot; <span lang="en" style="font-size: 0.85rem; color: var(--leaf); font-style: italic;">Credit given out</span></label>
         <input type="number" id="ta-credit" min="0" step="1" placeholder="200">
       </div>
-      <div class="calc-result" id="ta-result">Enter the five numbers above.</div>
+      <div class="calc-result" id="ta-result">Ket namba abich / Enter the five numbers above.</div>
     </div>
   </div>
 
   <!-- Final summary -->
   <div style="background: var(--earth); color: var(--cream); padding: 2rem; margin-top: 2.5rem; border-radius: 6px;">
-    <h3 style="color: var(--clay-light); margin-bottom: 0.75rem;">The One Page Summary</h3>
-    <p style="margin-bottom: 0.5rem;">Print this. Tape it inside the kitchen door.</p>
+    <h3 style="color: var(--clay-light); margin-bottom: 0.75rem;">Wa mar Piny Achiel</h3>
+    <p style="font-style: italic; color: var(--clay-light); font-size: 0.95rem; margin-bottom: 0.75rem;">The One Page Summary</p>
+    <p style="margin-bottom: 0.5rem;"><span lang="luo">Printo ma. Tano e dho mar kichni.</span> <em style="color: var(--paper-warm);"><span lang="en">Print this. Tape it inside the kitchen door.</span></em></p>
     <ol style="margin-left: 1.5rem; line-height: 1.9;">
-      <li>Food cost must stay under 35 percent of the selling price.</li>
-      <li>Break-even is your floor. Below it, you are losing money.</li>
-      <li>Reorder before you run out. Running out is losing customers.</li>
-      <li>Split every shilling: 50 stock, 30 household, 20 savings.</li>
-      <li>Match the till, the cash, and the credit every single evening.</li>
+      <li><span lang="luo">Nengo mar chiemo nyaka podhi e 35 percent mar nengo mar chuwo.</span> <em style="color: var(--paper-warm); font-size: 0.9rem; display:block;"><span lang="en">Food cost must stay under 35 percent of the selling price.</span></em></li>
+      <li><span lang="luo">Wuoyo en siri mari. Ok e siri, iloso pesa.</span> <em style="color: var(--paper-warm); font-size: 0.9rem; display:block;"><span lang="en">Break-even is your floor. Below it, you are losing money.</span></em></li>
+      <li><span lang="luo">Wuoyi kapok oyudi. Gungo loso jopayo.</span> <em style="color: var(--paper-warm); font-size: 0.9rem; display:block;"><span lang="en">Reorder before you run out. Running out is losing customers.</span></em></li>
+      <li><span lang="luo">Pogop sheleng' moromo amora: 50 chuwo, 30 oda, 20 kanong'o.</span> <em style="color: var(--paper-warm); font-size: 0.9rem; display:block;"><span lang="en">Split every shilling: 50 stock, 30 household, 20 savings.</span></em></li>
+      <li><span lang="luo">Rik till, pesa kod chuwo mar kinde pile-pile e otieno.</span> <em style="color: var(--paper-warm); font-size: 0.9rem; display:block;"><span lang="en">Match the till, the cash, and the credit every single evening.</span></em></li>
     </ol>
     <p style="margin-top: 1.5rem; font-style: italic; color: var(--clay-light);">
       "The plans of the diligent lead surely to abundance, but everyone who is hasty comes only to poverty."
@@ -895,10 +1016,11 @@
   <div class="name">Mama Beatrice's Window</div>
   <div class="luo">Mama Beatrice's Od Madhiambo &middot; Western Kenya</div>
   <div class="contact">
-    Near the college &middot; Near the hospital<br>
-    Open daily from sunrise until the last plate is gone
+    <span lang="luo">Kanyo ma podho gi skul &middot; Kanyo ma podho gi ospital</span><br>
+    <span lang="luo">Yweyoe pile koa chieng' nyamruok nyaka chieng' ma nyagli mokigo</span><br>
+    <em style="font-size: 0.9rem; color: var(--paper-warm);"><span lang="en">Near the college &middot; Near the hospital &middot; Open daily from sunrise until the last plate is gone</span></em>
   </div>
-  <div class="tag">A BLESSING TO THE NEIGHBORS</div>
+  <div class="tag">GIK MA MIYO GIK MABER / A BLESSING TO THE NEIGHBORS</div>
 </footer>
 
 <script>
@@ -923,7 +1045,7 @@
 
     if (isNaN(ing) || isNaN(price) || price <= 0) {
       out.className = 'calc-result';
-      out.innerHTML = 'Enter both numbers above.';
+      out.innerHTML = 'Ket namba ariyo / Enter both numbers above.';
       return;
     }
 
@@ -933,19 +1055,19 @@
 
     if (ratio <= 35) {
       klass = 'good';
-      verdict = 'Healthy plate. The food is working for you.';
+      verdict = 'Nyagli maber. Chiemo tiyo ne iyie.';
     } else if (ratio <= 45) {
       klass = 'warn';
-      verdict = 'Marginal. Look at raising the price by KSh ' + Math.ceil((ing * 100 / 35 - price) / 10) * 10 + ' or trimming ingredients.';
+      verdict = 'E pogo. Nono kedo nengo ne KSh ' + Math.ceil((ing * 100 / 35 - price) / 10) * 10 + ' kata kelo chwiri.';
     } else {
       klass = 'bad';
-      verdict = 'This plate is losing money. Raise the price or change the recipe.';
+      verdict = 'Nyagli ma ni loso pesa. Ked nengo kata lok resit.';
     }
 
     out.className = 'calc-result ' + klass;
     out.innerHTML =
-      'Food cost: <strong>' + pct(ratio) + '</strong> of the selling price.<br>' +
-      'Profit per plate: <strong>' + ksh(profit) + '</strong>.<br>' +
+      'Nengo mar chiemo: <strong>' + pct(ratio) + '</strong> mar nengo mar chuwo.<br>' +
+      'Chuwo mar nyagli achiel: <strong>' + ksh(profit) + '</strong>.<br>' +
       '<div class="calc-verdict">' + verdict + '</div>';
   }
 
@@ -957,7 +1079,7 @@
 
     if (isNaN(fixed) || isNaN(profit) || profit <= 0) {
       out.className = 'calc-result';
-      out.innerHTML = 'Enter both numbers above.';
+      out.innerHTML = 'Ket namba ariyo / Enter both numbers above.';
       return;
     }
 
@@ -966,19 +1088,19 @@
 
     if (be <= 5) {
       klass = 'good';
-      verdict = 'Easy floor. Almost any busy day will put you in profit.';
+      verdict = 'Siri ma yot. Chieng' moromo amora ma tiyore bimi e chuwo.';
     } else if (be <= 15) {
       klass = 'warn';
-      verdict = 'Reachable. You need a steady lunch crowd to clear this every day.';
+      verdict = 'Inyalo yudo. Ihera ji mar adhi ma podhi pile mondo olos gima pile.';
     } else {
       klass = 'bad';
-      verdict = 'High floor. Either cut your fixed costs or raise the price per plate.';
+      verdict = 'Siri malo. Ket chuwo mari ma podhi kata ked nengo mar nyagli.';
     }
 
     out.className = 'calc-result ' + klass;
     out.innerHTML =
-      'Break-even: <strong>' + be + ' plates per day</strong> just to cover costs.<br>' +
-      'After plate ' + be + ' every shilling is profit.<br>' +
+      'Wuoyo: <strong>nyagli ' + be + ' pile</strong> ma kelo chuwo kende.<br>' +
+      'Kuom nyagli ' + be + ', sheleng' moromo amora en chuwo.<br>' +
       '<div class="calc-verdict">' + verdict + '</div>';
   }
 
@@ -991,7 +1113,7 @@
 
     if (isNaN(usage) || isNaN(lead) || isNaN(safety)) {
       out.className = 'calc-result';
-      out.innerHTML = 'Enter all three numbers above.';
+      out.innerHTML = 'Ket namba adek / Enter all three numbers above.';
       return;
     }
 
@@ -1000,8 +1122,8 @@
 
     out.className = 'calc-result ' + klass;
     out.innerHTML =
-      'When your stock drops to <strong>' + point.toFixed(1) + ' kg</strong>, send someone to the market the next morning.<br>' +
-      '<div class="calc-verdict">Until then, keep cooking. After that point, you are running on borrowed time.</div>';
+      'Ka chwiri mari odong' e <strong>' + point.toFixed(1) + ' kg</strong>, or jomoko dhi maket okinyi ma oluwo.<br>' +
+      '<div class="calc-verdict">Nyaka ka, podh timo chiemo. Kuom nying\' ma, itiyo kod sa ma owuoyi.</div>';
   }
 
   // ===== CALCULATOR 4: Profit Split =====
@@ -1011,7 +1133,7 @@
 
     if (isNaN(total) || total < 0) {
       out.className = 'calc-result';
-      out.innerHTML = 'Enter the number above.';
+      out.innerHTML = 'Ket namba / Enter the number above.';
       return;
     }
 
@@ -1021,10 +1143,10 @@
 
     out.className = 'calc-result good';
     out.innerHTML =
-      '<strong>KSh ' + Math.round(stock).toLocaleString('en-US') + '</strong> stays in the kitchen for tomorrow&rsquo;s stock (50%).<br>' +
-      '<strong>KSh ' + Math.round(house).toLocaleString('en-US') + '</strong> goes to the household (30%).<br>' +
-      '<strong>KSh ' + Math.round(save).toLocaleString('en-US') + '</strong> goes into the savings envelope (20%).<br>' +
-      '<div class="calc-verdict">If you keep 20% for 90 days, that is ' + ksh(save * 90) + '. That buys a second jiko, a new sign, or a month of rent.</div>';
+      '<strong>KSh ' + Math.round(stock).toLocaleString('en-US') + '</strong> odong' e kichni ne chuwo mar nyikine (50%).<br>' +
+      '<strong>KSh ' + Math.round(house).toLocaleString('en-US') + '</strong> dhi e odhoge (30%).<br>' +
+      '<strong>KSh ' + Math.round(save).toLocaleString('en-US') + '</strong> dhi e kepa mar kanong'o (20%).<br>' +
+      '<div class="calc-verdict">Ka iwuoyo 20% kuom ndalo 90, ma en ' + ksh(save * 90) + '. Ma golo jiko mar ariyo, sign manyien, kata dwe achiel mar seko.</div>';
   }
 
   // ===== CALCULATOR 5: M-Pesa Daily Tally =====
@@ -1038,7 +1160,7 @@
 
     if (isNaN(plates) || isNaN(avg) || isNaN(mpesa) || isNaN(cash) || isNaN(credit)) {
       out.className = 'calc-result';
-      out.innerHTML = 'Enter all five numbers above.';
+      out.innerHTML = 'Ket namba abich / Enter all five numbers above.';
       return;
     }
 
@@ -1049,24 +1171,24 @@
 
     if (Math.abs(diff) < 1) {
       klass = 'good';
-      verdict = 'Perfect match. Every shilling is accounted for.';
+      verdict = 'Riek moloyo. Sheleng' moromo amora onge ma oyweyo.';
     } else if (Math.abs(diff) <= 50) {
       klass = 'warn';
       verdict = diff < 0
-        ? 'You are short by ' + ksh(Math.abs(diff)) + '. Likely a small change mistake. Make a note of it.'
-        : 'You have ' + ksh(diff) + ' extra. Check that the credit number is right.';
+        ? 'Ipoko gi ' + ksh(Math.abs(diff)) + '. Nyalo bedo kichni ma otiek. Wri gik ma.'
+        : 'In kod ' + ksh(diff) + ' ma opogore. Ngiy ka namba mar chuwo mar kinde ni riek.';
     } else {
       klass = 'bad';
       verdict = diff < 0
-        ? 'You are short by ' + ksh(Math.abs(diff)) + '. This is a real gap. Find it now: an unrecorded plate, a wrong change, or a till you forgot to check.'
-        : 'You have ' + ksh(diff) + ' extra. Double-check the till message and the cash count.';
+        ? 'Ipoko gi ' + ksh(Math.abs(diff)) + '. Ma en gima opogore tutu. Nono nino: nyagli ma ok owinj, kichni ma otiek, kata till ma osewoyo.'
+        : 'In kod ' + ksh(diff) + ' ma opogore. Ngiy wach mar till kod kwan mar pesa.';
     }
 
     out.className = 'calc-result ' + klass;
     out.innerHTML =
-      'Expected: <strong>' + ksh(expected) + '</strong> (' + plates + ' plates &times; ' + ksh(avg) + ').<br>' +
-      'Actual (M-Pesa + cash + credit): <strong>' + ksh(actual) + '</strong>.<br>' +
-      'Difference: <strong>' + (diff >= 0 ? '+' : '') + ksh(diff) + '</strong>.<br>' +
+      'Ma otimo: <strong>' + ksh(expected) + '</strong> (nyagli ' + plates + ' &times; ' + ksh(avg) + ').<br>' +
+      'Gima oyudo (M-Pesa + pesa + chuwo mar kinde): <strong>' + ksh(actual) + '</strong>.<br>' +
+      'Gima pok: <strong>' + (diff >= 0 ? '+' : '') + ksh(diff) + '</strong>.<br>' +
       '<div class="calc-verdict">' + verdict + '</div>';
   }
 
