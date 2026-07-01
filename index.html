@@ -275,6 +275,157 @@
     font-size: 1.5rem;
     letter-spacing: 0.5em;
   }
+
+  /* FORMULAS / MONEY SECTION */
+  .formula-card {
+    background: var(--cream);
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.5rem;
+    border-left: 5px solid var(--leaf);
+    border-radius: 4px;
+  }
+  .formula-card .formula-num {
+    display: inline-block;
+    background: var(--leaf);
+    color: var(--cream);
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    line-height: 32px;
+    border-radius: 50%;
+    font-weight: bold;
+    margin-right: 0.75rem;
+    font-size: 0.95rem;
+  }
+  .formula-card h3 {
+    display: inline-block;
+    color: var(--earth-deep);
+    vertical-align: middle;
+    margin: 0;
+    font-size: 1.25rem;
+  }
+  .formula-eq {
+    background: var(--paper-warm);
+    padding: 1rem 1.25rem;
+    margin: 1rem 0;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 1rem;
+    color: var(--earth-deep);
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  .formula-example {
+    background: var(--cream);
+    border: 1px dashed var(--clay);
+    padding: 1rem 1.25rem;
+    margin: 1rem 0;
+    border-radius: 4px;
+    font-size: 0.98rem;
+  }
+  .formula-example strong { color: var(--earth); }
+  .formula-note {
+    font-style: italic;
+    color: var(--leaf);
+    font-size: 0.95rem;
+    margin-top: 0.75rem;
+  }
+  .price-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.95rem;
+  }
+  .price-table th, .price-table td {
+    text-align: left;
+    padding: 0.6rem 0.5rem;
+    border-bottom: 1px solid var(--clay-light);
+  }
+  .price-table th {
+    background: var(--earth);
+    color: var(--cream);
+    font-weight: normal;
+    letter-spacing: 0.05em;
+  }
+  .price-table tr:last-child td { border-bottom: none; }
+  .price-table .price-col {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    color: var(--earth-deep);
+    font-weight: bold;
+  }
+  .price-table .source {
+    font-size: 0.8rem;
+    color: var(--leaf);
+    font-style: italic;
+  }
+  .reorder-tag {
+    display: inline-block;
+    background: var(--clay);
+    color: var(--cream);
+    padding: 0.15rem 0.6rem;
+    border-radius: 3px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    margin-left: 0.5rem;
+  }
+
+  /* CALCULATORS */
+  .calc {
+    background: var(--paper-warm);
+    padding: 1.25rem 1.5rem;
+    margin: 1rem 0;
+    border-radius: 4px;
+    border: 1px solid var(--clay-light);
+  }
+  .calc-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 0.6rem 0;
+    flex-wrap: wrap;
+  }
+  .calc-row label {
+    flex: 1 1 200px;
+    color: var(--earth-deep);
+    font-size: 0.95rem;
+  }
+  .calc-row input[type="number"] {
+    flex: 0 0 140px;
+    padding: 0.6rem 0.75rem;
+    border: 1px solid var(--clay);
+    border-radius: 4px;
+    background: var(--cream);
+    font-size: 1rem;
+    font-family: 'Courier New', monospace;
+    color: var(--earth-deep);
+    text-align: right;
+    min-width: 0;
+  }
+  .calc-row input:focus {
+    outline: none;
+    border-color: var(--leaf);
+    background: #fff;
+  }
+  .calc-result {
+    background: var(--earth);
+    color: var(--cream);
+    padding: 1rem 1.25rem;
+    margin-top: 0.75rem;
+    border-radius: 4px;
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+  .calc-result.good { border-left: 5px solid var(--leaf-light); }
+  .calc-result.warn { border-left: 5px solid var(--sun); }
+  .calc-result.bad  { border-left: 5px solid var(--clay); }
+  .calc-result strong { color: var(--clay-light); font-size: 1.15rem; }
+  .calc-verdict {
+    margin-top: 0.5rem;
+    font-style: italic;
+    color: var(--paper-warm);
+    font-size: 0.95rem;
+  }
 </style>
 </head>
 <body>
@@ -486,6 +637,245 @@
   </div>
 </section>
 
+<!-- MONEY & MATH -->
+<section class="tinted" style="margin-top: 2rem;">
+  <h2>Money &amp; Math</h2>
+  <p style="font-style: italic; color: var(--leaf); margin-top: -0.25rem; margin-bottom: 0.5rem;">
+    Puonj mar pesa
+  </p>
+  <p style="margin-bottom: 2rem;">
+    Five small formulas that keep a small kitchen honest. Write the answers in a notebook.
+    After one week, you will know more about your business than most people learn in a year.
+  </p>
+
+  <!-- Reference prices -->
+  <h3 style="color: var(--leaf); margin-bottom: 0.75rem;">Reference Prices (Kenya, June 2026)</h3>
+  <p style="font-size: 0.95rem; margin-bottom: 0.5rem;">
+    These are real prices from Numbeo Kenya. Western Kenya is usually 10 to 15 percent cheaper than Nairobi for the same item. Replace any number with the price you actually pay at your local market.
+  </p>
+  <table class="price-table">
+    <thead>
+      <tr><th>Item</th><th>Unit</th><th class="price-col">Price (KSh)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Maize flour (unga)</td><td>2 kg packet</td><td class="price-col">220 - 260</td></tr>
+      <tr><td>White rice (mchele)</td><td>1 kg</td><td class="price-col">200 - 240</td></tr>
+      <tr><td>Sukuma wiki / managu</td><td>1 bunch</td><td class="price-col">30 - 50</td></tr>
+      <tr><td>Tomatoes</td><td>1 kg</td><td class="price-col">100 - 130</td></tr>
+      <tr><td>Onions</td><td>1 kg</td><td class="price-col">115 - 145</td></tr>
+      <tr><td>Cooking oil</td><td>1 litre</td><td class="price-col">350 - 420</td></tr>
+      <tr><td>Beef (with bone)</td><td>1 kg</td><td class="price-col">650 - 750</td></tr>
+      <tr><td>Chicken (whole)</td><td>1 kg</td><td class="price-col">700 - 850</td></tr>
+      <tr><td>Tilapia (fresh)</td><td>1 kg</td><td class="price-col">500 - 650</td></tr>
+      <tr><td>Eggs</td><td>tray of 30</td><td class="price-col">480 - 560</td></tr>
+      <tr><td>Milk (fresh)</td><td>1 litre</td><td class="price-col">90 - 110</td></tr>
+      <tr><td>Tea leaves (majani)</td><td>250 g</td><td class="price-col">180 - 230</td></tr>
+      <tr><td>Sugar</td><td>1 kg</td><td class="price-col">170 - 200</td></tr>
+      <tr><td>Charcoal</td><td>1 large bag</td><td class="price-col">1,400 - 1,800</td></tr>
+      <tr><td>Kerosene</td><td>1 litre</td><td class="price-col">180 - 210</td></tr>
+      <tr><td>Cooking salt</td><td>1 kg</td><td class="price-col">60 - 80</td></tr>
+    </tbody>
+  </table>
+  <p class="formula-note">
+    Update these numbers the first time you walk into the market. They will be different from yours, and that difference is your edge.
+  </p>
+
+  <!-- FORMULA 1 -->
+  <div class="formula-card">
+    <span class="formula-num">1</span><h3>Food Cost Percentage</h3>
+    <p style="margin-top: 0.75rem;">
+      Every dish should cost you <strong>no more than 35 percent</strong> of what you sell it for. If your plate costs more than that to make, you are working for the food, not the food working for you.
+    </p>
+    <div class="formula-eq">
+      food cost % = (ingredients cost / selling price) &times; 100
+    </div>
+    <div class="formula-example">
+      <strong>Example:</strong> Ugali and fish. The fish (200 g) is KSh 120. The ugali flour (100 g) is KSh 12. The oil and salt is KSh 15. <strong>Total ingredients: KSh 147.</strong><br>
+      You sell the plate for KSh 250. So: (147 / 250) &times; 100 = <strong>58.8 percent.</strong><br>
+      <strong>This plate is too expensive to make.</strong> Either raise the price to KSh 450, or buy smaller fish, or reduce the portion. Do not just accept it.
+    </div>
+    <p class="formula-note">
+      The healthier number for a window restaurant is 25 to 35 percent. Anything above 40 means your profit is too thin and one bad day will wipe out a week of work.
+    </p>
+
+    <p style="margin-top: 1.5rem; font-weight: bold; color: var(--leaf);">Try it yourself:</p>
+    <div class="calc" data-calc="food-cost">
+      <div class="calc-row">
+        <label for="fc-cost">Cost to make the plate (KSh)</label>
+        <input type="number" id="fc-cost" min="0" step="1" placeholder="147">
+      </div>
+      <div class="calc-row">
+        <label for="fc-price">Selling price (KSh)</label>
+        <input type="number" id="fc-price" min="1" step="1" placeholder="250">
+      </div>
+      <div class="calc-result" id="fc-result">Enter the two numbers above.</div>
+    </div>
+  </div>
+
+  <!-- FORMULA 2 -->
+  <div class="formula-card">
+    <span class="formula-num">2</span><h3>Daily Break-Even</h3>
+    <p style="margin-top: 0.75rem;">
+      How many plates do you need to sell each day before you start making a profit, not just covering costs. This is the number that tells you when to keep cooking and when to close early.
+    </p>
+    <div class="formula-eq">
+      break-even plates = daily fixed costs / average profit per plate
+    </div>
+    <div class="formula-example">
+      <strong>Example:</strong> Your fixed costs each day (rent share, charcoal, kerosene, water, phone, M-Pesa fees) = KSh 600. Your average profit per plate (selling price minus ingredients minus gas) = KSh 120.<br>
+      Break-even: 600 / 120 = <strong>5 plates per day</strong> just to cover your costs.<br>
+      Every plate after plate number 5 is money in your pocket. Plate number 25 is real profit. Plate number 40 is a good day.
+    </div>
+    <p class="formula-note">
+      For a Western Kenya window restaurant, 25 to 40 plates per day is a healthy working week. Less than 15 means you are losing money and need to adjust prices or find more customers.
+    </p>
+
+    <p style="margin-top: 1.5rem; font-weight: bold; color: var(--leaf);">Try it yourself:</p>
+    <div class="calc" data-calc="breakeven">
+      <div class="calc-row">
+        <label for="be-fixed">Your fixed costs per day (KSh)</label>
+        <input type="number" id="be-fixed" min="0" step="1" placeholder="600">
+      </div>
+      <div class="calc-row">
+        <label for="be-profit">Average profit per plate (KSh)</label>
+        <input type="number" id="be-profit" min="1" step="1" placeholder="120">
+      </div>
+      <div class="calc-result" id="be-result">Enter the two numbers above.</div>
+    </div>
+  </div>
+
+  <!-- FORMULA 3 -->
+  <div class="formula-card">
+    <span class="formula-num">3</span><h3>Reorder Point</h3>
+    <p style="margin-top: 0.75rem;">
+      Never run out of fish on a Friday. Never run out of ugali flour on a Saturday morning. This formula tells you when to walk to the market.
+    </p>
+    <div class="formula-eq">
+      reorder point = (average daily usage &times; lead time in days) + safety stock
+    </div>
+    <div class="formula-example">
+      <strong>Example:</strong> You use about 2 kg of fish per day. The market is 2 days away (today and Saturday, market day is Monday). You want a 1-day safety buffer so you do not run dry.<br>
+      Reorder point: (2 &times; 2) + 2 = <strong>6 kg remaining.</strong><br>
+      When your fish gets down to 6 kg, send someone to the market the next morning. <span class="reorder-tag">REORDER AT 6 KG</span>
+    </div>
+    <p class="formula-note">
+      Lead time means how many days between realizing you need something and having it in your kitchen. In rural Kenya, that is usually 1 to 3 days depending on the item and your transport.
+    </p>
+
+    <p style="margin-top: 1.5rem; font-weight: bold; color: var(--leaf);">Try it yourself:</p>
+    <div class="calc" data-calc="reorder">
+      <div class="calc-row">
+        <label for="ro-usage">How much you use per day (kg)</label>
+        <input type="number" id="ro-usage" min="0" step="0.1" placeholder="2">
+      </div>
+      <div class="calc-row">
+        <label for="ro-lead">Days until you can get more</label>
+        <input type="number" id="ro-lead" min="0" step="1" placeholder="2">
+      </div>
+      <div class="calc-row">
+        <label for="ro-safety">Safety buffer (days)</label>
+        <input type="number" id="ro-safety" min="0" step="1" placeholder="1">
+      </div>
+      <div class="calc-result" id="ro-result">Enter the three numbers above.</div>
+    </div>
+  </div>
+
+  <!-- FORMULA 4 -->
+  <div class="formula-card">
+    <span class="formula-num">4</span><h3>Profit Split</h3>
+    <p style="margin-top: 0.75rem;">
+      A simple rule that keeps the business alive and the household fed at the same time. Do not skip this. Every shilling that comes in has a job before it gets spent.
+    </p>
+    <div class="formula-eq">
+      50% restock &nbsp;|&nbsp; 30% household &nbsp;|&nbsp; 20% savings
+    </div>
+    <div class="formula-example">
+      <strong>Example:</strong> At the end of the day, your till and cash together total KSh 2,400.<br>
+      <strong>KSh 1,200</strong> stays in the kitchen for tomorrow's stock (flour, fish, charcoal, sukuma, oil).<br>
+      <strong>KSh 720</strong> goes to the household (rent, school, soap, the small things).<br>
+      <strong>KSh 480</strong> goes into a separate savings envelope. Do not touch this for 3 months. After 3 months you will have enough to buy a second jiko (stove) or repair the window frame.
+    </div>
+    <p class="formula-note">
+      The savings is not optional. It is the seed of every future improvement. Even KSh 100 per day saved is KSh 3,000 per month and KSh 36,000 per year. That is a new door, a new sign, or three months of rent covered if the rains come.
+    </p>
+
+    <p style="margin-top: 1.5rem; font-weight: bold; color: var(--leaf);">Try it yourself:</p>
+    <div class="calc" data-calc="split">
+      <div class="calc-row">
+        <label for="sp-total">Total you took in today (KSh)</label>
+        <input type="number" id="sp-total" min="0" step="1" placeholder="2400">
+      </div>
+      <div class="calc-result" id="sp-result">Enter the number above.</div>
+    </div>
+  </div>
+
+  <!-- FORMULA 5 -->
+  <div class="formula-card">
+    <span class="formula-num">5</span><h3>M-Pesa Daily Tally</h3>
+    <p style="margin-top: 0.75rem;">
+      Every evening, before you sleep, three numbers must match. If they do not, something went wrong and you need to find it tonight, not tomorrow.
+    </p>
+    <div class="formula-eq">
+      M-Pesa till total + cash in hand + credit given out = expected from sales
+    </div>
+    <div class="formula-example">
+      <strong>Example:</strong> You served 30 plates. Average plate was KSh 130. So you should have KSh 3,900 total.<br>
+      M-Pesa till message says: KSh 2,100 received today.<br>
+      Cash in your tin: KSh 1,500.<br>
+      Two students owe you KSh 100 each (you let them pay later): KSh 200.<br>
+      Total: 2,100 + 1,500 + 200 = <strong>KSh 3,800.</strong><br>
+      Expected: 3,900. Difference: <strong>KSh 100 short.</strong> Find it now: a wrong change given, a plate not recorded, or a till you forgot to check.
+    </div>
+    <p class="formula-note">
+      A small difference every day becomes a big loss every month. The math does not lie. If you do this for 30 days, you will find the leak.
+    </p>
+
+    <p style="margin-top: 1.5rem; font-weight: bold; color: var(--leaf);">Try it yourself:</p>
+    <div class="calc" data-calc="tally">
+      <div class="calc-row">
+        <label for="ta-plates">Plates served today</label>
+        <input type="number" id="ta-plates" min="0" step="1" placeholder="30">
+      </div>
+      <div class="calc-row">
+        <label for="ta-avg">Average price per plate (KSh)</label>
+        <input type="number" id="ta-avg" min="0" step="1" placeholder="130">
+      </div>
+      <div class="calc-row">
+        <label for="ta-mpesa">M-Pesa till total (KSh)</label>
+        <input type="number" id="ta-mpesa" min="0" step="1" placeholder="2100">
+      </div>
+      <div class="calc-row">
+        <label for="ta-cash">Cash in your tin (KSh)</label>
+        <input type="number" id="ta-cash" min="0" step="1" placeholder="1500">
+      </div>
+      <div class="calc-row">
+        <label for="ta-credit">Credit given out (KSh)</label>
+        <input type="number" id="ta-credit" min="0" step="1" placeholder="200">
+      </div>
+      <div class="calc-result" id="ta-result">Enter the five numbers above.</div>
+    </div>
+  </div>
+
+  <!-- Final summary -->
+  <div style="background: var(--earth); color: var(--cream); padding: 2rem; margin-top: 2.5rem; border-radius: 6px;">
+    <h3 style="color: var(--clay-light); margin-bottom: 0.75rem;">The One Page Summary</h3>
+    <p style="margin-bottom: 0.5rem;">Print this. Tape it inside the kitchen door.</p>
+    <ol style="margin-left: 1.5rem; line-height: 1.9;">
+      <li>Food cost must stay under 35 percent of the selling price.</li>
+      <li>Break-even is your floor. Below it, you are losing money.</li>
+      <li>Reorder before you run out. Running out is losing customers.</li>
+      <li>Split every shilling: 50 stock, 30 household, 20 savings.</li>
+      <li>Match the till, the cash, and the credit every single evening.</li>
+    </ol>
+    <p style="margin-top: 1.5rem; font-style: italic; color: var(--clay-light);">
+      "The plans of the diligent lead surely to abundance, but everyone who is hasty comes only to poverty."
+    </p>
+    <div class="ref" style="color: var(--paper-warm); font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; margin-top: 0.25rem;">
+      Proverbs 21: 5
+    </div>
+  </div>
+</section>
+
 <!-- CLOSING SCRIPTURE -->
 <div class="scripture">
   <blockquote>
@@ -510,6 +900,197 @@
   </div>
   <div class="tag">A BLESSING TO THE NEIGHBORS</div>
 </footer>
+
+<script>
+(function() {
+  'use strict';
+
+  // Helper: format KSh with thousands separator
+  function ksh(n) {
+    return 'KSh ' + Math.round(n).toLocaleString('en-US');
+  }
+
+  // Helper: format percent
+  function pct(n) {
+    return n.toFixed(1) + '%';
+  }
+
+  // ===== CALCULATOR 1: Food Cost Percentage =====
+  function calcFoodCost() {
+    var ing = parseFloat(document.getElementById('fc-cost').value);
+    var price = parseFloat(document.getElementById('fc-price').value);
+    var out = document.getElementById('fc-result');
+
+    if (isNaN(ing) || isNaN(price) || price <= 0) {
+      out.className = 'calc-result';
+      out.innerHTML = 'Enter both numbers above.';
+      return;
+    }
+
+    var ratio = (ing / price) * 100;
+    var profit = price - ing;
+    var verdict, klass;
+
+    if (ratio <= 35) {
+      klass = 'good';
+      verdict = 'Healthy plate. The food is working for you.';
+    } else if (ratio <= 45) {
+      klass = 'warn';
+      verdict = 'Marginal. Look at raising the price by KSh ' + Math.ceil((ing * 100 / 35 - price) / 10) * 10 + ' or trimming ingredients.';
+    } else {
+      klass = 'bad';
+      verdict = 'This plate is losing money. Raise the price or change the recipe.';
+    }
+
+    out.className = 'calc-result ' + klass;
+    out.innerHTML =
+      'Food cost: <strong>' + pct(ratio) + '</strong> of the selling price.<br>' +
+      'Profit per plate: <strong>' + ksh(profit) + '</strong>.<br>' +
+      '<div class="calc-verdict">' + verdict + '</div>';
+  }
+
+  // ===== CALCULATOR 2: Daily Break-Even =====
+  function calcBreakeven() {
+    var fixed = parseFloat(document.getElementById('be-fixed').value);
+    var profit = parseFloat(document.getElementById('be-profit').value);
+    var out = document.getElementById('be-result');
+
+    if (isNaN(fixed) || isNaN(profit) || profit <= 0) {
+      out.className = 'calc-result';
+      out.innerHTML = 'Enter both numbers above.';
+      return;
+    }
+
+    var be = Math.ceil(fixed / profit);
+    var klass, verdict;
+
+    if (be <= 5) {
+      klass = 'good';
+      verdict = 'Easy floor. Almost any busy day will put you in profit.';
+    } else if (be <= 15) {
+      klass = 'warn';
+      verdict = 'Reachable. You need a steady lunch crowd to clear this every day.';
+    } else {
+      klass = 'bad';
+      verdict = 'High floor. Either cut your fixed costs or raise the price per plate.';
+    }
+
+    out.className = 'calc-result ' + klass;
+    out.innerHTML =
+      'Break-even: <strong>' + be + ' plates per day</strong> just to cover costs.<br>' +
+      'After plate ' + be + ' every shilling is profit.<br>' +
+      '<div class="calc-verdict">' + verdict + '</div>';
+  }
+
+  // ===== CALCULATOR 3: Reorder Point =====
+  function calcReorder() {
+    var usage = parseFloat(document.getElementById('ro-usage').value);
+    var lead = parseFloat(document.getElementById('ro-lead').value);
+    var safety = parseFloat(document.getElementById('ro-safety').value);
+    var out = document.getElementById('ro-result');
+
+    if (isNaN(usage) || isNaN(lead) || isNaN(safety)) {
+      out.className = 'calc-result';
+      out.innerHTML = 'Enter all three numbers above.';
+      return;
+    }
+
+    var point = (usage * lead) + safety;
+    var klass = 'good';
+
+    out.className = 'calc-result ' + klass;
+    out.innerHTML =
+      'When your stock drops to <strong>' + point.toFixed(1) + ' kg</strong>, send someone to the market the next morning.<br>' +
+      '<div class="calc-verdict">Until then, keep cooking. After that point, you are running on borrowed time.</div>';
+  }
+
+  // ===== CALCULATOR 4: Profit Split =====
+  function calcSplit() {
+    var total = parseFloat(document.getElementById('sp-total').value);
+    var out = document.getElementById('sp-result');
+
+    if (isNaN(total) || total < 0) {
+      out.className = 'calc-result';
+      out.innerHTML = 'Enter the number above.';
+      return;
+    }
+
+    var stock = total * 0.50;
+    var house = total * 0.30;
+    var save = total * 0.20;
+
+    out.className = 'calc-result good';
+    out.innerHTML =
+      '<strong>KSh ' + Math.round(stock).toLocaleString('en-US') + '</strong> stays in the kitchen for tomorrow&rsquo;s stock (50%).<br>' +
+      '<strong>KSh ' + Math.round(house).toLocaleString('en-US') + '</strong> goes to the household (30%).<br>' +
+      '<strong>KSh ' + Math.round(save).toLocaleString('en-US') + '</strong> goes into the savings envelope (20%).<br>' +
+      '<div class="calc-verdict">If you keep 20% for 90 days, that is ' + ksh(save * 90) + '. That buys a second jiko, a new sign, or a month of rent.</div>';
+  }
+
+  // ===== CALCULATOR 5: M-Pesa Daily Tally =====
+  function calcTally() {
+    var plates = parseFloat(document.getElementById('ta-plates').value);
+    var avg = parseFloat(document.getElementById('ta-avg').value);
+    var mpesa = parseFloat(document.getElementById('ta-mpesa').value);
+    var cash = parseFloat(document.getElementById('ta-cash').value);
+    var credit = parseFloat(document.getElementById('ta-credit').value);
+    var out = document.getElementById('ta-result');
+
+    if (isNaN(plates) || isNaN(avg) || isNaN(mpesa) || isNaN(cash) || isNaN(credit)) {
+      out.className = 'calc-result';
+      out.innerHTML = 'Enter all five numbers above.';
+      return;
+    }
+
+    var expected = plates * avg;
+    var actual = mpesa + cash + credit;
+    var diff = actual - expected;
+    var klass, verdict;
+
+    if (Math.abs(diff) < 1) {
+      klass = 'good';
+      verdict = 'Perfect match. Every shilling is accounted for.';
+    } else if (Math.abs(diff) <= 50) {
+      klass = 'warn';
+      verdict = diff < 0
+        ? 'You are short by ' + ksh(Math.abs(diff)) + '. Likely a small change mistake. Make a note of it.'
+        : 'You have ' + ksh(diff) + ' extra. Check that the credit number is right.';
+    } else {
+      klass = 'bad';
+      verdict = diff < 0
+        ? 'You are short by ' + ksh(Math.abs(diff)) + '. This is a real gap. Find it now: an unrecorded plate, a wrong change, or a till you forgot to check.'
+        : 'You have ' + ksh(diff) + ' extra. Double-check the till message and the cash count.';
+    }
+
+    out.className = 'calc-result ' + klass;
+    out.innerHTML =
+      'Expected: <strong>' + ksh(expected) + '</strong> (' + plates + ' plates &times; ' + ksh(avg) + ').<br>' +
+      'Actual (M-Pesa + cash + credit): <strong>' + ksh(actual) + '</strong>.<br>' +
+      'Difference: <strong>' + (diff >= 0 ? '+' : '') + ksh(diff) + '</strong>.<br>' +
+      '<div class="calc-verdict">' + verdict + '</div>';
+  }
+
+  // Wire up live recalculation
+  function wire(id, fn) {
+    var el = document.getElementById(id);
+    if (el) el.addEventListener('input', fn);
+  }
+
+  wire('fc-cost', calcFoodCost);
+  wire('fc-cost', calcFoodCost);
+  wire('be-fixed', calcBreakeven);
+  wire('be-profit', calcBreakeven);
+  wire('ro-usage', calcReorder);
+  wire('ro-lead', calcReorder);
+  wire('ro-safety', calcReorder);
+  wire('sp-total', calcSplit);
+  wire('ta-plates', calcTally);
+  wire('ta-avg', calcTally);
+  wire('ta-mpesa', calcTally);
+  wire('ta-cash', calcTally);
+  wire('ta-credit', calcTally);
+})();
+</script>
 
 </body>
 </html>
